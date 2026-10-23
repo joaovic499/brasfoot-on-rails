@@ -1,0 +1,87 @@
+<div class="card">
+  <p class="mut">Rodada <%= @match.round %></p>
+  <div class="row" style="justify-content:space-around">
+    <div style="text-align:center"><span class="teamdot" style="background:<%= @match.home_team.color %>"></span><strong><%= @match.home_team.name %></strong></div>
+    <div class="score"><%= @match.home_goals %> x <%= @match.away_goals %></div>
+    <div style="text-align:center"><span class="teamdot" style="background:<%= @match.away_team.color %>"></span><strong><%= @match.away_team.name %></strong></div>
+  </div>
+  <% best = @stats.first %>
+  <% if best %>
+    <p style="text-align:center;margin:12px 0 0">⭐ Melhor em campo: <strong><%= best.player.name %></strong> <%= rating_badge(best.rating) %></p>
+  <% end %>
+</div>
+
+<div class="card">
+  <h2>Gols</h2>
+  <% if @match.goal_events.empty? %>
+    <p class="mut">Sem gols. Jogo truncado!</p>
+  <% else %>
+    <table>
+      <% @match.goal_events.each do |e| %>
+        <tr>
+          <td style="width:60px"><%= e["minute"] %>'</td>
+          <td>⚽ <%= e["player"] %><% if e["assist"] %> <span class="mut">(assist. <%= e["assist"] %>)</span><% end %></td>
+          <td class="mut"><%= e["team_id"] == @match.home_team_id ? @match.home_team.name : @match.away_team.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
+
+<% if @match.card_events.any? %>
+  <div class="card">
+    <h2>Cartões</h2>
+    <table>
+      <% @match.card_events.each do |e| %>
+        <tr>
+          <td style="width:60px"><%= e["minute"] %>'</td>
+          <td><%= e["type"] == "red" ? "🟥" : "🟨" %> <%= e["player"] %></td>
+          <td class="mut"><%= e["team_id"] == @match.home_team_id ? @match.home_team.name : @match.away_team.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+<% if @match.sub_events.any? %>
+  <div class="card">
+    <h2>Substituições</h2>
+    <table>
+      <% @match.sub_events.each do |e| %>
+        <tr>
+          <td style="width:60px"><%= e["minute"] %>'</td>
+          <td>🔄 sai <%= e["out"] %>, entra <%= e["in"] %></td>
+          <td class="mut"><%= e["team_id"] == @match.home_team_id ? @match.home_team.name : @match.away_team.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+
+<% if @stats.any? %>
+  <div class="card" style="overflow-x:auto">
+    <h2>Notas dos jogadores</h2>
+    <% [@match.home_team, @match.away_team].each do |team| %>
+      <h3 style="margin:14px 0 6px"><span class="teamdot" style="background:<%= team.color %>"></span><%= team.name %></h3>
+      <table>
+        <tr><th>Jogador</th><th>Pos</th><th class="n">Min</th><th class="n">Gols</th><th class="n">Assist.</th><th class="n">Cartões</th><th class="n">Nota</th></tr>
+        <% @stats.select { |s| s.team_id == team.id }.each do |s| %>
+          <tr>
+            <td><%= s.player.name %></td>
+            <td><span class="pos"><%= s.player.position %></span></td>
+            <td class="n"><%= s.minutes %>'</td>
+            <td class="n"><%= s.goals if s.goals > 0 %></td>
+            <td class="n"><%= s.assists if s.assists > 0 %></td>
+            <td class="n"><%= "🟨" * [s.yellow_cards - s.red_cards, 0].max %><%= "🟥" * s.red_cards %></td>
+            <td class="n"><%= rating_badge(s.rating) %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="row">
+  <%= link_to "Voltar ao painel", root_path, class: "btn" %>
+  <%= link_to "Calendário", matches_path, class: "btn sec" %>
+</div>

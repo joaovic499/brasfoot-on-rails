@@ -1,0 +1,121 @@
+<style>
+  .leaders { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; margin-bottom:16px; }
+  .leader { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; }
+  .leader .lbl { color:var(--mut); font-size:12px; text-transform:uppercase; letter-spacing:1px; }
+  .leader .nm { font-size:20px; font-weight:800; margin:4px 0 2px; }
+  .leader .val { color:var(--acc); font-weight:800; }
+  .lists { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; }
+  .lists .card { margin-bottom:0; }
+  th a { color:inherit; text-decoration:none; }
+  th a:hover { color:var(--acc); }
+  td.sub { color:var(--mut); font-size:12px; }
+</style>
+
+<% tid = @team&.id %>
+<% scorer = @scorers.first; assister = @assisters.first; best = @best.first %>
+
+<div class="leaders">
+  <div class="leader">
+    <div class="lbl">⚽ Artilheiro</div>
+    <% if scorer %>
+      <div class="nm"><%= scorer.player.name %></div>
+      <div><span class="val"><%= scorer.goals %> gols</span> <span class="mut">· <%= scorer.team.name %></span></div>
+    <% else %><div class="nm mut">—</div><% end %>
+  </div>
+  <div class="leader">
+    <div class="lbl">🎯 Líder de assistências</div>
+    <% if assister %>
+      <div class="nm"><%= assister.player.name %></div>
+      <div><span class="val"><%= assister.assists %> assist.</span> <span class="mut">· <%= assister.team.name %></span></div>
+    <% else %><div class="nm mut">—</div><% end %>
+  </div>
+  <div class="leader">
+    <div class="lbl">⭐ Melhor do campeonato</div>
+    <% if best %>
+      <div class="nm"><%= best.player.name %></div>
+      <div><span class="val">nota <%= format("%.2f", best.avg_rating) %></span> <span class="mut">· <%= best.team.name %></span></div>
+    <% else %><div class="nm mut">—</div><% end %>
+  </div>
+</div>
+
+<% if @played.zero? %>
+  <div class="card"><p class="mut" style="margin:0">Ainda não há partidas disputadas. As estatísticas aparecem conforme o campeonato avança.</p></div>
+<% end %>
+
+<div class="lists">
+  <div class="card">
+    <h2>Artilharia</h2>
+    <table>
+      <tr><th>#</th><th>Jogador</th><th>Time</th><th class="n">Gols</th><th class="n">Jogos</th></tr>
+      <% @scorers.each_with_index do |r, i| %>
+        <tr class="<%= 'me' if r.team.id == tid %>">
+          <td><%= i + 1 %></td><td><%= r.player.name %></td><td class="sub"><%= r.team.short_name %></td>
+          <td class="n"><strong><%= r.goals %></strong></td><td class="n"><%= r.games %></td>
+        </tr>
+      <% end %>
+      <% if @scorers.empty? %><tr><td colspan="5" class="mut">Sem gols ainda.</td></tr><% end %>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Assistências</h2>
+    <table>
+      <tr><th>#</th><th>Jogador</th><th>Time</th><th class="n">Assist.</th><th class="n">Jogos</th></tr>
+      <% @assisters.each_with_index do |r, i| %>
+        <tr class="<%= 'me' if r.team.id == tid %>">
+          <td><%= i + 1 %></td><td><%= r.player.name %></td><td class="sub"><%= r.team.short_name %></td>
+          <td class="n"><strong><%= r.assists %></strong></td><td class="n"><%= r.games %></td>
+        </tr>
+      <% end %>
+      <% if @assisters.empty? %><tr><td colspan="5" class="mut">Sem assistências ainda.</td></tr><% end %>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Melhores notas</h2>
+    <p class="mut" style="margin:-6px 0 10px;font-size:12px">Média das notas nas partidas (mínimo de <%= @min_games %> jogo(s)).</p>
+    <table>
+      <tr><th>#</th><th>Jogador</th><th>Time</th><th class="n">Nota</th><th class="n">Jogos</th></tr>
+      <% @best.each_with_index do |r, i| %>
+        <tr class="<%= 'me' if r.team.id == tid %>">
+          <td><%= i + 1 %></td><td><%= r.player.name %></td><td class="sub"><%= r.team.short_name %></td>
+          <td class="n"><%= rating_badge(r.avg_rating) %></td><td class="n"><%= r.games %></td>
+        </tr>
+      <% end %>
+      <% if @best.empty? %><tr><td colspan="5" class="mut">Ninguém atingiu o mínimo de jogos.</td></tr><% end %>
+    </table>
+  </div>
+</div>
+
+<% if @team %>
+  <div class="card" id="meu-time" style="margin-top:16px;overflow-x:auto">
+    <h2>Meu time — <%= @team.name %></h2>
+    <p class="mut" style="margin:-6px 0 10px;font-size:12px">Clique no título de uma coluna para ordenar (clique de novo para inverter).</p>
+    <% cols = [["name", "Jogador", "asc"], ["position", "Pos", "asc"], ["overall", "Força", "desc"], ["games", "Jogos", "desc"],
+               ["minutes", "Min", "desc"], ["goals", "Gols", "desc"], ["assists", "Assist.", "desc"],
+               ["yellows", "🟨", "desc"], ["reds", "🟥", "desc"], ["avg_rating", "Nota", "desc"]] %>
+    <table>
+      <tr>
+        <% cols.each do |key, label, first_dir| %>
+          <% dir = @sort == key ? (@dir == "asc" ? "desc" : "asc") : first_dir %>
+          <% arrow = @sort == key ? (@dir == "asc" ? " ▲" : " ▼") : "" %>
+          <th class="<%= 'n' unless %w[name position].include?(key) %>"><%= link_to "#{label}#{arrow}", stats_path(sort: key, dir: dir, anchor: "meu-time") %></th>
+        <% end %>
+      </tr>
+      <% @team_rows.each do |r| %>
+        <tr>
+          <td><%= r.player.name %></td>
+          <td><span class="pos"><%= r.player.position %></span></td>
+          <td class="n"><%= ovr_badge r.player.overall %></td>
+          <td class="n"><%= r.games %></td>
+          <td class="n"><%= r.minutes %></td>
+          <td class="n"><strong><%= r.goals %></strong></td>
+          <td class="n"><strong><%= r.assists %></strong></td>
+          <td class="n"><%= r.yellows %></td>
+          <td class="n"><%= r.reds %></td>
+          <td class="n"><%= rating_badge(r.avg_rating) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>

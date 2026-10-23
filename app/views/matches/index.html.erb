@@ -1,0 +1,25 @@
+<% tid = @career&.team_id %>
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h2 style="margin:0">Calendário</h2>
+    <% if @show_all %>
+      <%= link_to "Só os jogos do meu time", matches_path, class: "btn sec" %>
+    <% else %>
+      <%= link_to "Ver todos os jogos", matches_path(all: 1), class: "btn sec" %>
+    <% end %>
+  </div>
+  <table style="margin-top:12px">
+    <tr><th>Rodada</th><th>Jogo</th><th class="n">Placar</th></tr>
+    <% @matches.each do |m| %>
+      <tr class="<%= 'me' if [m.home_team_id, m.away_team_id].include?(tid) %>">
+        <td><%= m.round %></td>
+        <td><%= m.home_team.name %> x <%= m.away_team.name %></td>
+        <td class="n">
+          <% if m.played %>
+            <%= link_to "#{m.home_goals} x #{m.away_goals}", match_path(m), style: "color:var(--acc)" %>
+          <% else %>-<% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

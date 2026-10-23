@@ -1,0 +1,24 @@
+<div class="card" style="border-left:6px solid <%= @team.color %>">
+  <div class="row" style="justify-content:space-between">
+    <h2 style="margin:0">Escalação — <%= @team.name %></h2>
+    <div class="stats">
+      <div><div class="mut">Geral</div><%= ovr_badge @team.overall %></div>
+      <div><div class="mut">Ataque</div><%= ovr_badge @team.attack %></div>
+      <div><div class="mut">Meio</div><%= ovr_badge @team.sector("MF") %></div>
+      <div><div class="mut">Defesa</div><%= ovr_badge @team.defense %></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="row" style="margin-bottom:10px">
+    <% Formations::ALL.each_key do |f| %>
+      <%= button_to f, squad_formation_path(formation: f), class: "btn #{f == @team.formation ? 'active' : 'sec'}", form: { data: { turbo: false } } %>
+    <% end %>
+    <%= button_to "Escalar melhores", squad_auto_path, class: "btn sec", form: { data: { turbo: false } } %>
+    <%= link_to "✏️ Editar jogadores", players_path(team_id: @team.id), class: "btn sec" %>
+  </div>
+  <p class="mut" style="font-size:13px;margin:0">Trocar a formação mantém os mesmos 11 e reorganiza cada um onde rende mais. “Escalar melhores” escolhe o melhor time para a formação atual. Clique num card e em outro (campo ou banco) para trocar: jogador fora da posição natural perde força (o número vermelho no card).</p>
+</div>
+
+<%= render "shared/lineup_editor", team: @team, by_slot: @by_slot, bench: @bench, form_url: squad_assign_path, banned_ids: [] %>

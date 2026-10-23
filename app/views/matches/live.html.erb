@@ -1,0 +1,173 @@
+<style>
+  .board { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; text-align:center; }
+  .board .tn { font-size:20px; font-weight:800; }
+  .board .sc { font-size:54px; font-weight:900; letter-spacing:4px; }
+  .clock { font-size:22px; font-weight:800; color:var(--acc); }
+  .controls { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:12px; }
+  .controls select { background:var(--card); color:var(--txt); border:1px solid var(--line); border-radius:6px; padding:9px; }
+  .log { max-height:230px; overflow-y:auto; font-size:14px; }
+  .ev { padding:5px 8px; border-bottom:1px solid var(--line); }
+  .ev.goal { background:rgba(245,197,24,.18); font-weight:800; }
+  .ev.sub, .ev.tactic { color:#9ad1ff; }
+  .ev.info { color:var(--acc); font-weight:700; text-align:center; }
+  .ev.chance { color:var(--mut); }
+  .ev.yellow { color:#ffd54f; }
+  .ev.red { color:#ff6b6b; font-weight:800; background:rgba(255,80,80,.12); }
+  .pill { display:inline-block; padding:3px 10px; border-radius:999px; background:#244030; font-size:12px; font-weight:700; }
+  #finish-box { display:none; text-align:center; margin-top:14px; }
+</style>
+
+<% label = { "scheduled" => "Pré-jogo", "live" => "Ao vivo", "halftime" => "Intervalo" }[@match.status] %>
+
+<div class="card">
+  <div class="board">
+    <div><span class="teamdot" style="background:<%= @match.home_team.color %>"></span><span class="tn"><%= @match.home_team.name %></span></div>
+    <div>
+      <div class="sc"><span id="hs"><%= @match.home_goals || 0 %></span> x <span id="as"><%= @match.away_goals || 0 %></span></div>
+      <div class="clock"><span id="clock"><%= @match.minute %>'</span> <span class="pill" id="status-pill"><%= label %></span></div>
+    </div>
+    <div><span class="teamdot" style="background:<%= @match.away_team.color %>"></span><span class="tn"><%= @match.away_team.name %></span></div>
+  </div>
+
+  <% if @match.status == "scheduled" %>
+    <div class="controls">
+      <%= link_to "Ajustar escalação", squad_path, class: "btn sec" %>
+      <%= button_to "▶ Iniciar partida", start_match_path(@match), class: "btn" %>
+    </div>
+  <% else %>
+    <div class="controls" id="live"
+         data-status="<%= @match.status %>"
+         data-team-id="<%= @team.id %>"
+         data-tick-url="<%= tick_match_path(@match) %>"
+         data-resume-url="<%= resume_match_path(@match) %>">
+      <button class="btn" id="play-btn" type="button"><%= @match.status == "halftime" ? "▶ Começar 2º tempo" : "▶ Continuar" %></button>
+      <label class="mut">Velocidade
+        <select id="speed">
+          <option value="1000">Lenta</option>
+          <option value="500" selected>Normal</option>
+          <option value="200">Rápida</option>
+          <option value="50">Turbo</option>
+        </select>
+      </label>
+      <span class="mut">Substituições: <strong><%= @subs_used %>/<%= Match::MAX_SUBS %></strong></span>
+    </div>
+    <div id="finish-box">
+      <p style="font-size:18px;font-weight:700">Fim de jogo!</p>
+      <%= link_to "Ver resumo", match_path(@match), class: "btn" %>
+      <%= link_to "Painel", root_path, class: "btn sec" %>
+    </div>
+  <% end %>
+</div>
+
+<% if @match.status != "scheduled" %>
+  <div class="card">
+    <h2>Lance a lance</h2>
+    <div class="log" id="log">
+      <% @match.all_events.reverse_each do |e| %>
+        <div class="ev <%= e["type"] %>"><%= e["type"] == "info" ? "" : "#{e["minute"]}' " %><%= e["text"] %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:10px">
+      <strong>Formação:</strong>
+      <% Formations::ALL.each_key do |f| %>
+        <%= button_to f, formation_match_path(@match, formation: f), class: "btn #{f == @team.formation ? 'active' : 'sec'}" %>
+      <% end %>
+    </div>
+    <p class="mut" style="margin:0 0 12px">Clique num card do campo e depois num reserva (ou noutro jogador) para trocar; o jogo pausa sozinho. Jogador fora da posição natural perde força (número vermelho) e o “→” mostra quanto ele renderia na vaga. Quem sai não volta, e vale no máximo <%= Match::MAX_SUBS %> substituições. Trocar a formação não conta como substituição.</p>
+    <%= render "shared/lineup_editor", team: @team, by_slot: @by_slot, bench: @bench, form_url: substitute_match_path(@match), banned_ids: @banned %>
+  </div>
+
+  <script>
+  window.LiveMatch = (function () {
+    var box = document.getElementById('live');
+    var token = document.querySelector('meta[name=csrf-token]').content;
+    var btn = document.getElementById('play-btn');
+    var speed = document.getElementById('speed');
+    var log = document.getElementById('log');
+    var clock = document.getElementById('clock');
+    var hs = document.getElementById('hs'), as = document.getElementById('as');
+    var pill = document.getElementById('status-pill');
+    var finishBox = document.getElementById('finish-box');
+    var state = { status: box.dataset.status };
+    var timer = null, busy = false;
+
+    function post(url) {
+      return fetch(url, { method: 'POST', credentials: 'same-origin',
+        headers: { 'X-CSRF-Token': token, 'Accept': 'application/json' } })
+        .then(function (r) { return r.json(); });
+    }
+
+    function addEvents(evs) {
+      evs.forEach(function (e) {
+        var d = document.createElement('div');
+        d.className = 'ev ' + e.type;
+        d.textContent = (e.type === 'info' ? '' : e.minute + "' ") + e.text;
+        log.insertBefore(d, log.firstChild);
+      });
+    }
+
+    function render() {
+      var names = { live: 'Ao vivo', halftime: 'Intervalo', finished: 'Encerrado' };
+      pill.textContent = names[state.status] || state.status;
+      if (state.status === 'finished') {
+        halt(); btn.style.display = 'none'; finishBox.style.display = 'block';
+      } else if (state.status === 'halftime') {
+        halt(); btn.textContent = '▶ Começar 2º tempo';
+      } else {
+        btn.textContent = timer ? '⏸ Pausar' : '▶ Continuar';
+      }
+    }
+
+    function apply(s) {
+      state = s;
+      clock.textContent = s.minute + "'";
+      hs.textContent = s.home_goals; as.textContent = s.away_goals;
+      addEvents(s.events || []);
+      var mine = (s.events || []).some(function (e) { return e.type === 'red' && String(e.team_id) === box.dataset.teamId; });
+      if (mine) {                       // expulsão no SEU time: pausa e recarrega o campo (vaga vazia)
+        halt();
+        setTimeout(function () { location.reload(); }, 900);
+        return;
+      }
+      render();
+    }
+
+    function halt() { if (timer) { clearInterval(timer); timer = null; } }
+
+    function tick() {
+      if (busy) return;
+      busy = true;
+      post(box.dataset.tickUrl).then(apply)
+        .catch(function () { halt(); render(); })
+        .then(function () { busy = false; });
+    }
+
+    function start() {
+      if (timer || state.status !== 'live') return;
+      timer = setInterval(tick, parseInt(speed.value, 10));
+      render();
+    }
+
+    function pause() { halt(); render(); }
+
+    btn.addEventListener('click', function () {
+      if (timer) { pause(); return; }
+      if (state.status === 'halftime') {
+        post(box.dataset.resumeUrl).then(function (s) { apply(s); start(); });
+      } else {
+        start();
+      }
+    });
+
+    speed.addEventListener('change', function () {
+      if (timer) { halt(); start(); }
+    });
+
+    render();
+    return { pause: pause };
+  })();
+  </script>
+<% end %>

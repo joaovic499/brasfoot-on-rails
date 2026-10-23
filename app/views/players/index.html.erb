@@ -1,0 +1,93 @@
+<style>
+  .inp { background:#0f1a14; color:var(--txt); border:1px solid var(--line); border-radius:6px; padding:6px 8px; width:100%; font-size:14px; }
+  .inp.num { width:70px; text-align:center; }
+  table.ed td { padding:5px 6px; }
+  .topbar { position:sticky; top:0; z-index:20; box-shadow:0 6px 12px rgba(0,0,0,.35); }
+  #dirty-tag { display:none; color:var(--acc); font-weight:700; }
+  .btn.save { font-size:15px; padding:11px 20px; }
+</style>
+
+<div class="card topbar">
+  <div class="row" style="justify-content:space-between">
+    <h2 style="margin:0">Editor de jogadores</h2>
+    <div class="row">
+      <span id="dirty-tag">● alterações não salvas</span>
+      <%= form_with url: players_path, method: :get, data: { turbo: false } do %>
+        <%= select_tag :team_id, options_from_collection_for_select(@teams, :id, :name, @team&.id), class: "inp", id: "team_filter" %>
+      <% end %>
+      <% if @team %>
+        <button class="btn save" type="submit" form="bulk_form">💾 Salvar tudo</button>
+      <% end %>
+    </div>
+  </div>
+  <p class="mut" style="margin:10px 0 0;font-size:13px">
+    <strong>Posição secundária</strong> (até 2): o jogador joga ali sem perder força. Em qualquer outra posição ele perde força conforme a distância
+    até a posição mais próxima da lista dele. Mudar de time manda o jogador para o banco do novo time.
+  </p>
+</div>
+
+<% if @team %>
+  <%= form_with url: bulk_players_path, method: :patch, id: "bulk_form", data: { turbo: false } do %>
+    <%= hidden_field_tag :view_team_id, @team.id, id: "view_team" %>
+    <div class="card" style="overflow-x:auto">
+      <h2><%= @team.name %> — <%= @players.size %> jogadores</h2>
+      <table class="ed">
+        <tr><th>Nome</th><th>Força</th><th>Posição</th><th>Secundária 1</th><th>Secundária 2</th><th>Time</th></tr>
+        <% @players.each do |pl| %>
+          <% k = "players[#{pl.id}]" %>
+          <tr>
+            <td><%= text_field_tag "#{k}[name]", pl.name, class: "inp", id: "name_#{pl.id}" %></td>
+            <td><%= number_field_tag "#{k}[overall]", pl.overall, min: 1, max: 99, class: "inp num", id: "ovr_#{pl.id}" %></td>
+            <td><%= select_tag "#{k}[position]", options_for_select(position_options, pl.position), class: "inp", id: "pos_#{pl.id}" %></td>
+            <td><%= select_tag "#{k}[alt1]", options_for_select([["—", ""]] + position_options, pl.secondary_positions[0]), class: "inp", id: "alt1_#{pl.id}" %></td>
+            <td><%= select_tag "#{k}[alt2]", options_for_select([["—", ""]] + position_options, pl.secondary_positions[1]), class: "inp", id: "alt2_#{pl.id}" %></td>
+            <td><%= select_tag "#{k}[team_id]", options_from_collection_for_select(@teams, :id, :name, pl.team_id), class: "inp", id: "team_#{pl.id}" %></td>
+          </tr>
+        <% end %>
+      </table>
+      <div style="margin-top:14px">
+        <button class="btn save" type="submit">💾 Salvar tudo</button>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="card" style="overflow-x:auto">
+    <h2>Adicionar jogador em <%= @team.name %></h2>
+    <%= form_with url: players_path, method: :post, data: { turbo: false } do %>
+      <%= hidden_field_tag :view_team_id, @team.id, id: "view_new" %>
+      <%= hidden_field_tag "player[team_id]", @team.id, id: "new_team" %>
+      <table class="ed">
+        <tr>
+          <td><%= text_field_tag "player[name]", nil, placeholder: "Nome", class: "inp", id: "new_name", required: true %></td>
+          <td><%= number_field_tag "player[overall]", 70, min: 1, max: 99, class: "inp num", id: "new_ovr" %></td>
+          <td><%= select_tag "player[position]", options_for_select(position_options, "CM"), class: "inp", id: "new_pos" %></td>
+          <td><%= select_tag "player[alt1]", options_for_select([["—", ""]] + position_options), class: "inp", id: "new_alt1" %></td>
+          <td><%= select_tag "player[alt2]", options_for_select([["—", ""]] + position_options), class: "inp", id: "new_alt2" %></td>
+          <td><button class="btn" type="submit">Adicionar</button></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+<% else %>
+  <div class="card"><p class="mut">Nenhum time cadastrado.</p></div>
+<% end %>
+
+<script>
+(function () {
+  var f = document.getElementById('bulk_form');
+  var tag = document.getElementById('dirty-tag');
+  var sel = document.getElementById('team_filter');
+  var dirty = false, cur = sel.value;
+
+  if (f) {
+    ['input', 'change'].forEach(function (ev) {
+      f.addEventListener(ev, function () { dirty = true; tag.style.display = 'inline'; });
+    });
+    f.addEventListener('submit', function () { dirty = false; });
+  }
+  sel.addEventListener('change', function () {
+    if (dirty && !confirm('Você tem alterações não salvas. Trocar de time e descartar?')) { sel.value = cur; return; }
+    sel.form.submit();
+  });
+})();
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Brasfoot La Liga</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <style>
+    :root { --bg:#0f1a14; --card:#17261d; --line:#27402f; --txt:#e8f3ea; --mut:#8fa898; --acc:#f5c518; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--txt); }
+    header { background:#0a120d; border-bottom:2px solid var(--acc); padding:12px 20px; display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+    header h1 { margin:0; font-size:20px; color:var(--acc); letter-spacing:1px; }
+    header a { color:var(--txt); text-decoration:none; font-weight:600; }
+    header a:hover { color:var(--acc); }
+    main { max-width:980px; margin:20px auto; padding:0 16px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:16px; }
+    h2 { margin-top:0; color:var(--acc); font-size:18px; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:8px 10px; text-align:left; border-bottom:1px solid var(--line); }
+    th { color:var(--mut); font-size:12px; text-transform:uppercase; }
+    td.n, th.n { text-align:center; }
+    tr.me td { background:rgba(245,197,24,.10); }
+    .btn { display:inline-block; background:var(--acc); color:#111; border:0; border-radius:6px; padding:10px 16px; font-weight:700; cursor:pointer; text-decoration:none; font-size:14px; }
+    .btn.sec { background:transparent; color:var(--txt); border:1px solid var(--line); }
+    .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    .grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+    .flash { padding:10px 14px; border-radius:8px; margin-bottom:16px; font-weight:600; }
+    .flash.notice { background:#1d4d2b; } .flash.alert { background:#6b2323; }
+    .ovr { display:inline-block; min-width:36px; text-align:center; padding:3px 6px; border-radius:6px; font-weight:800; color:#111; }
+    .ovr.gold { background:#f5c518; } .ovr.green { background:#4cd964; } .ovr.yellow { background:#d6e04a; } .ovr.gray { background:#9aa7a0; }
+    .pos { font-size:12px; font-weight:700; padding:2px 6px; border-radius:4px; background:#244030; }
+    .score { font-size:42px; font-weight:800; text-align:center; }
+    .mut { color:var(--mut); }
+    .teamdot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+    .stats { display:flex; gap:16px; flex-wrap:wrap; } .stats div { text-align:center; }
+    .lock { color:var(--acc); font-weight:700; }
+    .btn.active { background:#fff; color:#111; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚽ BRASFOOT LA LIGA</h1>
+    <% if match_in_progress %>
+      <span class="lock">🔒 Partida em andamento — termine o jogo para sair</span>
+    <% else %>
+      <a href="<%= root_path %>">Painel</a>
+      <% if career_started? %>
+        <a href="<%= squad_path %>">Elenco</a>
+        <a href="<%= matches_path %>">Jogos</a>
+        <a href="<%= stats_path %>">Estatísticas</a>
+      <% end %>
+      <a href="<%= players_path %>">Jogadores ✏️</a>
+    <% end %>
+  </header>
+  <main>
+    <% flash.each do |type, msg| %>
+      <div class="flash <%= type %>"><%= msg %></div>
+    <% end %>
+    <%= yield %>
+  </main>
+</body>
+</html>
