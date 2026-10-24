@@ -29,11 +29,6 @@ class DashboardController < ApplicationController
     end
   end
 
-  def play_all
-    Match.pending.each(&:simulate!)
-    redirect_to root_path, status: :see_other, notice: "Temporada simulada!"
-  end
-
   def reset
     Career.reset!
     redirect_to root_path, status: :see_other, notice: "Tudo zerado. Escolha um time."

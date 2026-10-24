@@ -65,7 +65,7 @@
       <div class="slot" style="left:<%= x %>%; top:<%= y %>%;" data-slot="<%= i %>" data-slot-pos="<%= pos %>"<% if pl %> data-player-id="<%= pl.id %>" data-natural="<%= pl.position %>" data-ratings="<%= ratings_json(pl) %>"<% end %>>
         <% if pl %>
           <% rt = pl.rating_at(pos); pen = pl.penalty_at(pos) %>
-          <div class="fcard <%= card_tier(rt) %><%= ' off' if pen > 0 %>" title="<%= pl.name %> — posições: <%= pl.positions.join('/') %> (<%= pl.overall %>). Jogando de <%= pos %>: <%= rt %>">
+          <div class="fcard <%= card_tier(rt) %><%= ' off' if pen > 0 %>" title="<%= pl.name %> — posições: <%= pl.positions.join('/') %> (<%= pl.overall %>). Jogando de <%= pos %>: <%= rt %>. <%= attrs_summary(pl) %>">
             <% if pen > 0 %><span class="pen">-<%= pen %></span><% end %>
             <div class="r"><%= rt %></div>
             <div class="p"><%= pen > 0 ? "#{pl.position}→#{pos}" : pos %></div>
@@ -90,7 +90,7 @@
           <% group.each do |pl| %>
             <% out = banned_ids.include?(pl.id) %>
             <div class="bcard<%= ' banned' if out %>"<% unless out %> data-player-id="<%= pl.id %>" data-natural="<%= pl.position %>" data-ratings="<%= ratings_json(pl) %>"<% end %>>
-              <div class="fcard <%= card_tier(pl.overall) %>" title="<%= pl.name %> — <%= pl.positions.join('/') %><%= ' (já saiu)' if out %>">
+              <div class="fcard <%= card_tier(pl.overall) %>" title="<%= pl.name %> — <%= pl.positions.join('/') %><%= ' (já saiu)' if out %>. <%= attrs_summary(pl) %>">
                 <div class="r"><%= pl.overall %></div>
                 <div class="p"><%= out ? "SAIU" : pl.positions.join("/") %></div>
                 <div class="nm"><%= card_name(pl.name) %></div>

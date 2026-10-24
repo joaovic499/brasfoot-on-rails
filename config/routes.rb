@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root "dashboard#show"
   post "start",      to: "dashboard#start",      as: :start
   post "play_round", to: "dashboard#play_round", as: :play_round
-  post "play_all",   to: "dashboard#play_all",   as: :play_all
   post "reset",      to: "dashboard#reset",      as: :reset
 
   get   "squad",           to: "squad#show",      as: :squad
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
   post  "squad/auto",      to: "squad#auto",      as: :squad_auto
 
   get "stats", to: "stats#index", as: :stats
+
+  get   "settings",                  to: "settings#show",            as: :settings
+  patch "settings",                  to: "settings#update"
+  post  "settings/simulate_season",  to: "settings#simulate_season", as: :simulate_season
 
   resources :players, only: %i[index create] do
     collection { patch :bulk } # salvar tudo de uma vez

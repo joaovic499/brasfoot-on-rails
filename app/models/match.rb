@@ -1,12 +1,15 @@
 class Match < ApplicationRecord
   MAX_SUBS = 5
+  STRENGTH_EXP = 4.5    # quanto a diferença de força entre os times pesa nos gols esperados
+  BASE_GOALS = 1.15     # gols esperados de um time contra um adversário de força igual (sem mando)
   YELLOW_P = 2.0 / 90   # ~2 amarelos por time por jogo
   RED_P = 0.025 / 90    # vermelho direto
-  ASSIST_CHANCE = 0.78  # chance de um gol ter assistência
+  ASSIST_CHANCE = 0.72  # chance de um gol ter assistência
+  ASSIST_SKILL_EXP = 6.0 # peso de passe/condução/ritmo na hora de decidir quem dá a assistência
 
   # Quem tende a dar assistência / levar cartão, por posição da vaga
-  ASSIST_WEIGHT = { "GK" => 0.05, "CB" => 0.5, "LB" => 1.3, "RB" => 1.3, "CDM" => 0.8, "CM" => 1.8,
-                    "LM" => 2.5, "RM" => 2.5, "CAM" => 3.5, "LW" => 3.5, "RW" => 3.5, "ST" => 2.0 }.freeze
+  ASSIST_WEIGHT = { "GK" => 0.05, "CB" => 0.25, "LB" => 0.9, "RB" => 0.9, "CDM" => 0.7, "CM" => 1.6,
+                    "LM" => 2.0, "RM" => 2.0, "CAM" => 3.0, "LW" => 2.6, "RW" => 2.6, "ST" => 1.2 }.freeze
   CARD_WEIGHT = { "GK" => 0.0, "CB" => 2.0, "LB" => 1.6, "RB" => 1.6, "CDM" => 2.4, "CM" => 1.6,
                   "LM" => 1.0, "RM" => 1.0, "CAM" => 1.0, "LW" => 0.9, "RW" => 0.9, "ST" => 1.2 }.freeze
 
@@ -291,12 +294,12 @@ class Match < ApplicationRecord
     r = rand
     evs = []
     if r < RED_P
-      entry = pick_weighted(lineup) { |e| CARD_WEIGHT[e.slot_pos] }
+      entry = pick_weighted(lineup) { |e| CARD_WEIGHT[e.slot_pos] * (e.player.aggression / 65.0) }
       evs << red_event(team, entry.player, min, "leva o vermelho direto")
       lineup.delete(entry)
     elsif r < RED_P + YELLOW_P
       # quem já tem amarelo se cuida mais: é bem menos provável tomar o segundo
-      entry = pick_weighted(lineup) { |e| CARD_WEIGHT[e.slot_pos] * (state.yellows[e.player.id] >= 1 ? 0.25 : 1.0) }
+      entry = pick_weighted(lineup) { |e| CARD_WEIGHT[e.slot_pos] * (e.player.aggression / 65.0) * (state.yellows[e.player.id] >= 1 ? 0.25 : 1.0) }
       pid = entry.player.id
       state.yellows[pid] += 1
       evs << { "type" => "yellow", "minute" => min, "team_id" => team.id, "player" => entry.player.name,
@@ -320,7 +323,7 @@ class Match < ApplicationRecord
     assist_entry = nil
     if rand < ASSIST_CHANCE
       others = lineup - [scorer_entry]
-      assist_entry = pick_weighted(others) { |e| ASSIST_WEIGHT[e.slot_pos] * (e.rating / 80.0)**2 } if others.any?
+      assist_entry = pick_weighted(others) { |e| ASSIST_WEIGHT[e.slot_pos] * (e.player.creativity / 75.0)**ASSIST_SKILL_EXP * (e.rating / 80.0) } if others.any?
     end
     text = "⚽ GOOOL! #{scorer.name} marca para o #{team.name}!"
     text += " Assistência de #{assist_entry.player.name}." if assist_entry
@@ -362,7 +365,7 @@ class Match < ApplicationRecord
 
   # Quanto maior a razão ataque/defesa, mais gols esperados
   def expected_goals(att, defn, bonus)
-    (1.35 * (att / defn)**6 * bonus).clamp(0.2, 4.5)
+    (BASE_GOALS * (att / defn)**STRENGTH_EXP * bonus).clamp(0.2, 4.5)
   end
 
   # Sorteio ponderado: o bloco devolve o peso de cada item

@@ -4,9 +4,17 @@ class Team < ApplicationRecord
   has_many :players, dependent: :destroy
 
   # Um titular em campo: jogador + posição da vaga + força efetiva nessa vaga
+  # Quanto cada fator pesa na hora de decidir quem faz o gol (ajuste aqui para deixar mais/menos "finalizador")
+  SCORER_SHOOT_EXP = 2.5  # finalização
+  SCORER_RATING_EXP = 0.5 # força na posição
+
   Entry = Struct.new(:player, :slot_pos, :rating) do
     def group = Positions.group(slot_pos)
-    def scorer_weight = Positions::ALL[slot_pos][:weight] * (rating / 80.0)**3
+
+    # Posição da vaga x finalização x força: atacante finalizador marca muito; ponta driblador com chute fraco, pouco
+    def scorer_weight
+      Positions::ALL[slot_pos][:weight] * (player.finishing / 75.0)**SCORER_SHOOT_EXP * (rating / 80.0)**SCORER_RATING_EXP
+    end
   end
 
   Standing = Struct.new(:team, :played, :won, :drawn, :lost, :gf, :ga, :points, keyword_init: true) do

@@ -43,10 +43,9 @@
       <button class="btn" id="play-btn" type="button"><%= @match.status == "halftime" ? "▶ Começar 2º tempo" : "▶ Continuar" %></button>
       <label class="mut">Velocidade
         <select id="speed">
-          <option value="1000">Lenta</option>
-          <option value="500" selected>Normal</option>
-          <option value="200">Rápida</option>
-          <option value="50">Turbo</option>
+          <% Setting::SPEEDS.each do |value, info| %>
+            <option value="<%= value %>"<%= " selected" if @speed == value %>><%= info[:name] %></option>
+          <% end %>
         </select>
       </label>
       <span class="mut">Substituições: <strong><%= @subs_used %>/<%= Match::MAX_SUBS %></strong></span>

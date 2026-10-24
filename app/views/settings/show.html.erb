@@ -1,0 +1,44 @@
+<style>
+  .opt { display:flex; gap:12px; align-items:flex-start; padding:10px 12px; border:1px solid var(--line); border-radius:8px; margin-bottom:8px; cursor:pointer; }
+  .opt:hover { border-color:var(--acc); }
+  .opt input { margin-top:4px; accent-color:#f5c518; }
+  .opt .nm { font-weight:800; }
+  .opt .ds { color:var(--mut); font-size:13px; }
+  .btn[disabled] { opacity:.45; cursor:not-allowed; }
+</style>
+
+<div class="card">
+  <h2>⚙️ Configurações</h2>
+  <p class="mut" style="margin:0">Aqui você ajusta o jogo sem precisar mexer a cada partida.</p>
+</div>
+
+<div class="card">
+  <h2>Velocidade do jogo</h2>
+  <p class="mut" style="margin-top:0">Vale para todas as partidas ao vivo. Na tela da partida você ainda pode trocar a velocidade na hora, mas aqui ela já começa do jeito que você escolheu.</p>
+  <%= form_with url: settings_path, method: :patch, data: { turbo: false } do %>
+    <% Setting::SPEEDS.each do |value, info| %>
+      <label class="opt">
+        <%= radio_button_tag :game_speed, value, @speed == value, id: "speed_#{value}" %>
+        <span><span class="nm"><%= info[:name] %></span><br><span class="ds"><%= info[:desc] %></span></span>
+      </label>
+    <% end %>
+    <button class="btn" type="submit" style="margin-top:6px">Salvar velocidade</button>
+  <% end %>
+</div>
+
+<div class="card">
+  <h2>Simular a temporada inteira</h2>
+  <% if @career.nil? %>
+    <p class="mut" style="margin-top:0">Disponível depois que você escolher um time (inicie uma carreira no Painel).</p>
+    <button class="btn" type="button" disabled>Simular temporada</button>
+  <% elsif @pending.zero? %>
+    <p class="mut" style="margin-top:0">A temporada já terminou: não há partidas para simular.</p>
+    <button class="btn" type="button" disabled>Simular temporada</button>
+  <% else %>
+    <p class="mut" style="margin-top:0">
+      Joga automaticamente as <strong><%= @pending %></strong> partidas que faltam, as do seu time e as dos outros, sem você assistir.
+      Gols, assistências, cartões e notas entram nas estatísticas normalmente. Não dá para desfazer.
+    </p>
+    <%= button_to "Simular temporada inteira", simulate_season_path, class: "btn", form: { onsubmit: "return confirm('Simular todas as #{@pending} partidas restantes? Isso não pode ser desfeito.')" } %>
+  <% end %>
+</div>

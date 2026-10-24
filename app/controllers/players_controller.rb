@@ -1,8 +1,12 @@
 class PlayersController < ApplicationController
+  # Com uma carreira em andamento os jogadores ficam congelados (só consulta)
+  before_action :block_edits_during_career, only: %i[bulk create]
+
   def index
     @teams = Team.order(:name)
     @team = Team.find_by(id: params[:team_id]) || Career.current&.team || @teams.first
     @players = @team ? @team.sorted_players : []
+    @locked = Career.exists?
   end
 
   # Salva todos os jogadores da tela de uma vez (só grava quem foi alterado)
@@ -17,11 +21,15 @@ class PlayersController < ApplicationController
     rows.each do |id, attrs|
       pl = players[id.to_s]
       next unless pl
-      a = attrs.permit(:name, :overall, :position, :team_id, :alt1, :alt2)
+      a = attrs.permit(:name, :overall, :position, :team_id, :alt1, :alt2, *Player::ATTRS)
 
       old_team = pl.team
-      pl.assign_attributes(a.slice(:name, :overall, :position, :team_id))
+      pl.assign_attributes(a.slice(:name, :overall, :position, :team_id, *Player::ATTRS))
       pl.alt_positions = [a[:alt1], a[:alt2]].map(&:to_s).reject(&:blank?).uniq.join(",")
+      # mudou atributos e não mexeu na Força: a Força é recalculada pelos atributos
+      if (pl.changed & Player::ATTRS.map(&:to_s)).any? && !pl.overall_changed? && (calc = pl.overall_from_attrs)
+        pl.overall = calc
+      end
       next unless pl.changed?
 
       moved = pl.team_id_changed?
@@ -50,6 +58,7 @@ class PlayersController < ApplicationController
   def create
     pl = Player.new(player_params)
     pl.alt_positions = alts_from_params
+    pl.overall = pl.overall_from_attrs || pl.overall # com os 6 atributos, a Força vem deles
     if pl.save
       refresh_lineups([pl.team])
       redirect_to players_path(team_id: pl.team_id), status: :see_other, notice: "#{pl.name} adicionado."
@@ -61,8 +70,14 @@ class PlayersController < ApplicationController
 
   private
 
+  def block_edits_during_career
+    return unless Career.exists?
+    redirect_to players_path(team_id: params[:view_team_id]), status: :see_other,
+                alert: "Edição bloqueada: não dá para alterar jogadores durante a carreira. Use “Reiniciar carreira” no Painel para editar de novo."
+  end
+
   def player_params
-    params.require(:player).permit(:name, :overall, :position, :team_id)
+    params.require(:player).permit(:name, :overall, :position, :team_id, *Player::ATTRS)
   end
 
   def alts_from_params

@@ -58,4 +58,10 @@ module ApplicationHelper
           end
     content_tag(:span, format("%.1f", r), class: cls)
   end
+
+  # "RIT 91 · FIN 78 · PAS 77 · CON 82 · DEF 50 · FIS 71" (goleiro não tem)
+  def attrs_summary(player)
+    return "goleiro" if player.position == "GK"
+    Player::ATTRS.map { |a| "#{Player::ATTR_SHORT[a]} #{player.attr(a)}" }.join(" · ")
+  end
 end

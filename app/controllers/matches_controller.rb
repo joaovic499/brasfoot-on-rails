@@ -30,6 +30,7 @@ class MatchesController < ApplicationController
     @bench = @team.bench_players
     @banned = @match.off_ids
     @subs_used = @team.id == @match.home_team_id ? @match.subs_home : @match.subs_away
+    @speed = Setting.game_speed
   end
 
   def start

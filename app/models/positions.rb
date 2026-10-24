@@ -13,17 +13,17 @@
 module Positions
   ALL = {
     "GK"  => { name: "Goleiro",            group: "GK", x: 0,  y: 0,   weight: 0.0 },
-    "CB"  => { name: "Zagueiro",           group: "DF", x: 0,  y: 1,   weight: 0.6 },
-    "LB"  => { name: "Lateral esquerdo",   group: "DF", x: -2, y: 1.5, weight: 0.9 },
-    "RB"  => { name: "Lateral direito",    group: "DF", x: 2,  y: 1.5, weight: 0.9 },
-    "CDM" => { name: "Volante",            group: "MF", x: 0,  y: 2,   weight: 0.9 },
-    "CM"  => { name: "Meio-campo central", group: "MF", x: 0,  y: 3,   weight: 1.8 },
-    "LM"  => { name: "Ala esquerdo",       group: "MF", x: -2, y: 4,   weight: 2.5 },
-    "RM"  => { name: "Ala direito",        group: "MF", x: 2,  y: 4,   weight: 2.5 },
-    "CAM" => { name: "Meia armador",       group: "MF", x: 0,  y: 4,   weight: 3.5 },
-    "LW"  => { name: "Ponta esquerda",     group: "FW", x: -2, y: 5,   weight: 4.5 },
-    "RW"  => { name: "Ponta direita",      group: "FW", x: 2,  y: 5,   weight: 4.5 },
-    "ST"  => { name: "Atacante",           group: "FW", x: 0,  y: 5.4, weight: 6.0 }
+    "CB"  => { name: "Zagueiro",           group: "DF", x: 0,  y: 1,   weight: 0.7 },
+    "LB"  => { name: "Lateral esquerdo",   group: "DF", x: -2, y: 1.5, weight: 0.7 },
+    "RB"  => { name: "Lateral direito",    group: "DF", x: 2,  y: 1.5, weight: 0.7 },
+    "CDM" => { name: "Volante",            group: "MF", x: 0,  y: 2,   weight: 0.8 },
+    "CM"  => { name: "Meio-campo central", group: "MF", x: 0,  y: 3,   weight: 1.3 },
+    "LM"  => { name: "Ala esquerdo",       group: "MF", x: -2, y: 4,   weight: 1.8 },
+    "RM"  => { name: "Ala direito",        group: "MF", x: 2,  y: 4,   weight: 1.8 },
+    "CAM" => { name: "Meia armador",       group: "MF", x: 0,  y: 4,   weight: 2.4 },
+    "LW"  => { name: "Ponta esquerda",     group: "FW", x: -2, y: 5,   weight: 3.0 },
+    "RW"  => { name: "Ponta direita",      group: "FW", x: 2,  y: 5,   weight: 3.0 },
+    "ST"  => { name: "Atacante",           group: "FW", x: 0,  y: 5.4, weight: 3.4 }
   }.freeze
 
   ORDER = ALL.keys.freeze

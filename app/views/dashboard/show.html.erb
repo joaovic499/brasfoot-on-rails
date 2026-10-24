@@ -47,7 +47,6 @@
         <div class="row">
           <%= link_to(@next_match.in_progress? ? "▶ Continuar partida" : "▶ Jogar ao vivo", live_match_path(@next_match), class: "btn") %>
           <%= button_to "Simular rápido", play_round_path, class: "btn sec" %>
-          <%= button_to "Simular temporada", play_all_path, class: "btn sec" %>
         </div>
       </div>
     </div>

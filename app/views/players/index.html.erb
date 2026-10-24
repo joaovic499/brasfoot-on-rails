@@ -1,10 +1,14 @@
 <style>
   .inp { background:#0f1a14; color:var(--txt); border:1px solid var(--line); border-radius:6px; padding:6px 8px; width:100%; font-size:14px; }
   .inp.num { width:70px; text-align:center; }
-  table.ed td { padding:5px 6px; }
+  .inp.at { width:56px; text-align:center; padding:6px 4px; }
+  .inp.at::placeholder { color:#6f8777; }
+  table.ed td { padding:5px 5px; }
+  table.ed th { white-space:nowrap; }
   .topbar { position:sticky; top:0; z-index:20; box-shadow:0 6px 12px rgba(0,0,0,.35); }
   #dirty-tag { display:none; color:var(--acc); font-weight:700; }
   .btn.save { font-size:15px; padding:11px 20px; }
+  td.calc { color:var(--mut); text-align:center; font-size:13px; white-space:nowrap; }
 </style>
 
 <div class="card topbar">
@@ -15,24 +19,57 @@
       <%= form_with url: players_path, method: :get, data: { turbo: false } do %>
         <%= select_tag :team_id, options_from_collection_for_select(@teams, :id, :name, @team&.id), class: "inp", id: "team_filter" %>
       <% end %>
-      <% if @team %>
+      <% if @team && !@locked %>
         <button class="btn save" type="submit" form="bulk_form">💾 Salvar tudo</button>
       <% end %>
     </div>
   </div>
+  <% if @locked %>
+    <p style="margin:10px 0 0;font-size:14px">🔒 <strong>Edição bloqueada durante a carreira.</strong>
+      <span class="mut">Os jogadores ficam congelados enquanto você joga o campeonato. Para editar de novo, use “Reiniciar carreira” no Painel (isso apaga a temporada atual).</span></p>
+  <% else %>
   <p class="mut" style="margin:10px 0 0;font-size:13px">
-    <strong>Posição secundária</strong> (até 2): o jogador joga ali sem perder força. Em qualquer outra posição ele perde força conforme a distância
-    até a posição mais próxima da lista dele. Mudar de time manda o jogador para o banco do novo time.
+    <strong>Posição secundária</strong> (até 2): joga ali sem perder força; em qualquer outra posição perde força conforme a distância.
+    <strong>Atributos</strong> (1 a 99): quem tem <em>finalização</em> alta faz gols, quem tem <em>passe</em>/condução/ritmo dá assistências, e <em>defesa</em>/<em>físico</em> alto leva mais cartões.
+    Se você mudar os atributos e <u>não mexer na Força</u>, a Força é recalculada pelos atributos (coluna “Over atrib.” mostra o valor atual). Atributo em branco usa o perfil médio da posição (número cinza).
+    Mudar de time manda o jogador para o banco do novo time.
   </p>
+  <% end %>
 </div>
 
-<% if @team %>
+<% if @team && @locked %>
+  <div class="card" style="overflow-x:auto">
+    <h2><%= @team.name %> — <%= @players.size %> jogadores</h2>
+    <table>
+      <tr>
+        <th>Nome</th><th class="n">Força</th><th>Posições</th>
+        <% Player::ATTRS.each do |a| %><th class="n" title="<%= Player::ATTR_LABELS[a] %>"><%= Player::ATTR_SHORT[a] %></th><% end %>
+      </tr>
+      <% @players.each do |pl| %>
+        <tr>
+          <td><%= pl.name %></td>
+          <td class="n"><%= ovr_badge pl.overall %></td>
+          <td><span class="pos"><%= pl.positions.join("/") %></span></td>
+          <% if pl.position == "GK" %>
+            <td colspan="<%= Player::ATTRS.size %>" class="mut" style="text-align:center">goleiro</td>
+          <% else %>
+            <% Player::ATTRS.each do |a| %><td class="n"><%= pl.attr(a) %></td><% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% elsif @team %>
   <%= form_with url: bulk_players_path, method: :patch, id: "bulk_form", data: { turbo: false } do %>
     <%= hidden_field_tag :view_team_id, @team.id, id: "view_team" %>
     <div class="card" style="overflow-x:auto">
       <h2><%= @team.name %> — <%= @players.size %> jogadores</h2>
       <table class="ed">
-        <tr><th>Nome</th><th>Força</th><th>Posição</th><th>Secundária 1</th><th>Secundária 2</th><th>Time</th></tr>
+        <tr>
+          <th>Nome</th><th>Força</th><th>Posição</th><th>Sec. 1</th><th>Sec. 2</th>
+          <% Player::ATTRS.each do |a| %><th title="<%= Player::ATTR_LABELS[a] %>"><%= Player::ATTR_SHORT[a] %></th><% end %>
+          <th>Over atrib.</th><th>Time</th>
+        </tr>
         <% @players.each do |pl| %>
           <% k = "players[#{pl.id}]" %>
           <tr>
@@ -41,6 +78,14 @@
             <td><%= select_tag "#{k}[position]", options_for_select(position_options, pl.position), class: "inp", id: "pos_#{pl.id}" %></td>
             <td><%= select_tag "#{k}[alt1]", options_for_select([["—", ""]] + position_options, pl.secondary_positions[0]), class: "inp", id: "alt1_#{pl.id}" %></td>
             <td><%= select_tag "#{k}[alt2]", options_for_select([["—", ""]] + position_options, pl.secondary_positions[1]), class: "inp", id: "alt2_#{pl.id}" %></td>
+            <% if pl.position == "GK" %>
+              <td colspan="<%= Player::ATTRS.size %>" class="calc">goleiro: sem atributos</td>
+            <% else %>
+              <% Player::ATTRS.each do |a| %>
+                <td><%= number_field_tag "#{k}[#{a}]", pl[a], min: 1, max: 99, placeholder: pl.attr(a), class: "inp at", id: "#{a}_#{pl.id}", title: Player::ATTR_LABELS[a] %></td>
+              <% end %>
+            <% end %>
+            <td class="calc"><%= pl.overall_from_attrs || "—" %></td>
             <td><%= select_tag "#{k}[team_id]", options_from_collection_for_select(@teams, :id, :name, pl.team_id), class: "inp", id: "team_#{pl.id}" %></td>
           </tr>
         <% end %>
@@ -53,17 +98,25 @@
 
   <div class="card" style="overflow-x:auto">
     <h2>Adicionar jogador em <%= @team.name %></h2>
+    <p class="mut" style="margin:-6px 0 10px;font-size:12px">Preenchendo os 6 atributos, a Força é calculada por eles.</p>
     <%= form_with url: players_path, method: :post, data: { turbo: false } do %>
       <%= hidden_field_tag :view_team_id, @team.id, id: "view_new" %>
       <%= hidden_field_tag "player[team_id]", @team.id, id: "new_team" %>
       <table class="ed">
+        <tr>
+          <th>Nome</th><th>Força</th><th>Posição</th><th>Sec. 1</th><th>Sec. 2</th>
+          <% Player::ATTRS.each do |a| %><th title="<%= Player::ATTR_LABELS[a] %>"><%= Player::ATTR_SHORT[a] %></th><% end %><th></th>
+        </tr>
         <tr>
           <td><%= text_field_tag "player[name]", nil, placeholder: "Nome", class: "inp", id: "new_name", required: true %></td>
           <td><%= number_field_tag "player[overall]", 70, min: 1, max: 99, class: "inp num", id: "new_ovr" %></td>
           <td><%= select_tag "player[position]", options_for_select(position_options, "CM"), class: "inp", id: "new_pos" %></td>
           <td><%= select_tag "player[alt1]", options_for_select([["—", ""]] + position_options), class: "inp", id: "new_alt1" %></td>
           <td><%= select_tag "player[alt2]", options_for_select([["—", ""]] + position_options), class: "inp", id: "new_alt2" %></td>
-          <td><button class="btn" type="submit">Adicionar</button></td>
+          <% Player::ATTRS.each do |a| %>
+            <td><%= number_field_tag "player[#{a}]", nil, min: 1, max: 99, class: "inp at", id: "new_#{a}", title: Player::ATTR_LABELS[a] %></td>
+          <% end %>
+          <td><button class="btn small" type="submit">Adicionar</button></td>
         </tr>
       </table>
     <% end %>

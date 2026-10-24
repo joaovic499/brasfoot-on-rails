@@ -6,7 +6,7 @@ namespace :db do
 
     out = []
     out << "# Gerado por `bin/rails db:export_seed` em #{Time.current}"
-    out << "# [nome, posição principal, força, [posições secundárias (até 2)]]"
+    out << "# [nome, posição principal, força, [posições secundárias] ou nil, [ritmo, finalização, passe, condução, defesa, físico]]"
     out << "# Posições: GK CB LB RB CDM CM LM RM CAM LW RW ST"
     out << "SQUADS = {"
     teams.each_with_index do |t, ti|
@@ -17,7 +17,11 @@ namespace :db do
       players.each_with_index do |p, i|
         alts = p.secondary_positions
         item = "[#{p.name.inspect}, #{p.position.inspect}, #{p.overall}"
-        item += ", %w[#{alts.join(' ')}]" if alts.any?
+        if p.attrs_filled?
+          item += ", #{alts.any? ? "%w[#{alts.join(' ')}]" : 'nil'}, [#{Player::ATTRS.map { |a| p[a] }.join(', ')}]"
+        elsif alts.any?
+          item += ", %w[#{alts.join(' ')}]"
+        end
         item += "]"
         out << "      #{item}#{i < players.size - 1 ? ',' : ''}"
       end
@@ -33,8 +37,10 @@ namespace :db do
 
       SQUADS.each do |name, data|
         team = Team.create!(name: name, short_name: data[:short], color: data[:color], stadium: data[:stadium])
-        data[:players].each do |pname, pos, ovr, alts|
-          team.players.create!(name: pname, position: pos, overall: ovr, alt_positions: (alts || []).join(","))
+        data[:players].each do |pname, pos, ovr, alts, at|
+          team.players.create!(name: pname, position: pos, overall: ovr, alt_positions: (alts || []).join(","),
+                               pace: at&.[](0), shooting: at&.[](1), passing: at&.[](2),
+                               dribbling: at&.[](3), defending: at&.[](4), physical: at&.[](5))
         end
         team.auto_lineup!("4-3-3")
       end
