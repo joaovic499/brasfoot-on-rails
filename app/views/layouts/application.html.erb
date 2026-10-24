@@ -5,59 +5,156 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <style>
-    :root { --bg:#0f1a14; --card:#17261d; --line:#27402f; --txt:#e8f3ea; --mut:#8fa898; --acc:#f5c518; }
+    :root { --bg:#07120c; --bg2:#0d1d16; --card:#12241b; --card-2:#183127; --line:#2f4a3b; --txt:#edf7ef; --mut:#9bb5a4; --acc:#f5c518; --acc-2:#7ae5a3; --shadow:rgba(0,0,0,.34); }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--txt); }
-    header { background:#0a120d; border-bottom:2px solid var(--acc); padding:12px 20px; display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
-    header h1 { margin:0; font-size:20px; color:var(--acc); letter-spacing:1px; }
-    header a { color:var(--txt); text-decoration:none; font-weight:600; }
-    header a:hover { color:var(--acc); }
-    main { max-width:980px; margin:20px auto; padding:0 16px; }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:16px; }
-    h2 { margin-top:0; color:var(--acc); font-size:18px; }
+    body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; background:radial-gradient(circle at top, #122d22 0%, var(--bg) 38%, #050d0a 100%); color:var(--txt); }
+    .app-shell { min-height:100vh; display:grid; grid-template-columns:248px minmax(0,1fr); }
+    .sidebar { position:sticky; top:0; height:100vh; display:flex; flex-direction:column; padding:24px 16px 18px; background:linear-gradient(180deg,#0b1510,#080e0b 78%); border-right:1px solid rgba(122,229,163,.18); z-index:20; }
+    .brand { display:flex; align-items:center; gap:12px; padding:4px 8px 24px; color:var(--txt); text-decoration:none; }
+    .brand-mark { width:42px; height:42px; display:grid; place-items:center; flex:0 0 auto; background:var(--acc); color:#11170f; font-size:16px; font-weight:1000; border-radius:8px 8px 14px 8px; box-shadow:4px 4px 0 #527b2b; }
+    .brand-copy { display:flex; flex-direction:column; gap:3px; }
+    .brand-copy strong { font-size:15px; letter-spacing:.12em; }
+    .brand-copy small { color:var(--mut); font-size:9px; font-weight:800; letter-spacing:.17em; }
+    .nav-kicker { padding:0 10px; margin:8px 0 10px; color:#688071; font-size:9px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; }
+    .main-nav { display:grid; gap:5px; }
+    .nav-link { position:relative; min-height:46px; display:flex; align-items:center; padding:0 12px; border:1px solid transparent; border-radius:6px; color:#afc1b5; font-size:13px; font-weight:750; text-decoration:none; transition:background .16s ease,color .16s ease,border-color .16s ease; }
+    .nav-link:hover { color:#fff; background:#14241a; border-color:#203a29; }
+    .nav-link.is-active { color:#efffcf; background:linear-gradient(90deg,rgba(166,224,72,.17),rgba(166,224,72,.04)); border-color:rgba(166,224,72,.23); }
+    .nav-link.is-active::before { position:absolute; content:""; left:-1px; top:9px; bottom:9px; width:3px; border-radius:0 3px 3px 0; background:#c5f35b; box-shadow:0 0 12px #b8f04a88; }
+    .nav-link.exit { margin-top:12px; border-color:rgba(245,197,24,.24); color:#f2d76c; }
+    .nav-link.exit:hover { background:rgba(245,197,24,.1); }
+    .nav-lock { margin:12px 4px 0; padding:13px 11px; display:flex; gap:10px; align-items:center; border:1px solid rgba(245,197,24,.3); background:rgba(245,197,24,.07); border-radius:6px; }
+    .lock-light { width:8px; height:8px; flex:0 0 auto; border-radius:50%; background:#f5c518; box-shadow:0 0 12px #f5c518aa; }
+    .nav-lock strong,.nav-lock small { display:block; }
+    .nav-lock strong { color:#f7d75e; font-size:10px; letter-spacing:.08em; }
+    .nav-lock small { color:#b4a975; font-size:10px; margin-top:3px; }
+    .sidebar-foot { margin-top:auto; padding:14px 10px 2px; border-top:1px solid rgba(255,255,255,.08); }
+    .sidebar-foot span { display:block; color:#718579; font-size:9px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+    .sidebar-foot strong { display:block; margin-top:6px; color:#d8e6dc; font-size:11px; }
+    .workspace { min-width:0; }
+    .topbar { min-height:76px; padding:15px clamp(18px,3vw,42px); display:flex; justify-content:space-between; align-items:center; gap:16px; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,15,11,.78); }
+    .topbar-title { display:flex; flex-direction:column; gap:5px; }
+    .topbar-title span { color:#8aab96; font-size:9px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; }
+    .topbar-title strong { font-size:14px; letter-spacing:.04em; }
+    .topbar-state { display:flex; align-items:center; gap:8px; padding:8px 11px; border:1px solid rgba(122,229,163,.22); border-radius:4px; color:#bde6c8; font-size:9px; font-weight:900; letter-spacing:.1em; }
+    .topbar-state i { width:7px; height:7px; border-radius:50%; background:#7ae5a3; box-shadow:0 0 9px #7ae5a3; }
+    main { max-width:1500px; margin:0 auto; padding:26px clamp(18px,3vw,42px) 48px; }
+    .card { background:linear-gradient(180deg, rgba(24,50,39,.96), rgba(15,27,22,.96)); border:1px solid var(--line); border-radius:16px; padding:18px; margin-bottom:18px; box-shadow:0 12px 20px var(--shadow); }
+    .panel-hero { padding:20px; }
+    .panel-header { display:flex; justify-content:space-between; align-items:center; }
+    .eyebrow { margin:0 0 6px; color:var(--acc); text-transform:uppercase; letter-spacing:1.5px; font-size:11px; font-weight:800; }
+    h2 { margin-top:0; color:var(--acc); font-size:22px; }
     table { width:100%; border-collapse:collapse; }
-    th,td { padding:8px 10px; text-align:left; border-bottom:1px solid var(--line); }
+    th,td { padding:10px 12px; text-align:left; border-bottom:1px solid rgba(255,255,255,.06); }
     th { color:var(--mut); font-size:12px; text-transform:uppercase; }
     td.n, th.n { text-align:center; }
-    tr.me td { background:rgba(245,197,24,.10); }
-    .btn { display:inline-block; background:var(--acc); color:#111; border:0; border-radius:6px; padding:10px 16px; font-weight:700; cursor:pointer; text-decoration:none; font-size:14px; }
-    .btn.sec { background:transparent; color:var(--txt); border:1px solid var(--line); }
+    tr.me td { background:rgba(245,197,24,.09); }
+    .btn { display:inline-block; background:linear-gradient(180deg, #f9d95d, var(--acc)); color:#111; border:0; border-radius:10px; padding:10px 16px; font-weight:800; cursor:pointer; text-decoration:none; font-size:14px; box-shadow:0 7px 14px rgba(245,197,24,.25); }
+    .btn.sec { background:rgba(255,255,255,.02); color:var(--txt); border:1px solid var(--line); box-shadow:none; }
     .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
-    .flash { padding:10px 14px; border-radius:8px; margin-bottom:16px; font-weight:600; }
-    .flash.notice { background:#1d4d2b; } .flash.alert { background:#6b2323; }
-    .ovr { display:inline-block; min-width:36px; text-align:center; padding:3px 6px; border-radius:6px; font-weight:800; color:#111; }
-    .ovr.gold { background:#f5c518; } .ovr.green { background:#4cd964; } .ovr.yellow { background:#d6e04a; } .ovr.gray { background:#9aa7a0; }
+    .grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+    .flash { padding:12px 14px; border-radius:10px; margin-bottom:16px; font-weight:700; }
+    .flash.notice { background:rgba(29,77,43,.9); border:1px solid rgba(122,229,163,.35); } .flash.alert { background:rgba(107,35,35,.9); border:1px solid rgba(255,107,107,.35); }
+    .ovr { display:inline-block; min-width:36px; text-align:center; padding:4px 7px; border-radius:8px; font-weight:900; color:#111; }
+    .ovr.gold { background:#f5c518; } .ovr.green { background:#69f0ae; } .ovr.yellow { background:#dfe85f; } .ovr.gray { background:#b8c3bc; }
     .pos { font-size:12px; font-weight:700; padding:2px 6px; border-radius:4px; background:#244030; }
     .score { font-size:42px; font-weight:800; text-align:center; }
     .mut { color:var(--mut); }
-    .teamdot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+    .teamdot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; vertical-align:middle; box-shadow:0 0 0 2px rgba(255,255,255,.09); }
     .stats { display:flex; gap:16px; flex-wrap:wrap; } .stats div { text-align:center; }
     .lock { color:var(--acc); font-weight:700; }
     .btn.active { background:#fff; color:#111; }
+    .team-card { background:linear-gradient(180deg, rgba(18,36,27,.92), rgba(12,22,17,.98)); border:1px solid var(--line); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:12px; }
+    .team-card-head, .team-hero-head { display:flex; align-items:center; gap:12px; }
+    .team-card-head h3 { margin:0; font-size:18px; }
+    .team-short { display:inline-flex; align-items:center; justify-content:center; padding:4px 8px; border-radius:999px; font-size:11px; font-weight:800; background:rgba(245,197,24,.12); color:var(--acc); border:1px solid rgba(245,197,24,.3); }
+    .stadium { margin:0; }
+    .team-grid .team-card .btn { margin-top:auto; }
+    .starline { margin-top:6px; display:flex; flex-direction:column; gap:6px; }
+    .starline-row { display:flex; align-items:center; gap:8px; color:var(--txt); opacity:.9; }
+    .team-name-wrap { display:inline-flex; align-items:center; gap:8px; }
+    .team-crest, .team-crest-fallback { display:inline-flex; align-items:center; justify-content:center; border-radius:12px; box-shadow:inset 0 0 0 2px rgba(255,255,255,.12), 0 8px 18px rgba(0,0,0,.22); }
+    .mini-crest { margin-right:2px; }
+    .team-hero { background:linear-gradient(135deg, rgba(18,36,27,.96), rgba(11,19,16,.98)); }
+    .hero-row { justify-content:space-between; align-items:center; }
+    .team-kit { display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:900; color:#fff; border-radius:999px; letter-spacing:.5px; background:linear-gradient(135deg, var(--kit-primary), rgba(255,255,255,.25)); box-shadow:inset 0 0 0 2px rgba(255,255,255,.12); }
+    @media (max-width:760px) {
+      .app-shell { display:block; }
+      .sidebar { position:sticky; top:0; height:auto; padding:10px 12px 8px; border-right:0; border-bottom:1px solid rgba(122,229,163,.18); }
+      .brand { padding:2px 4px 10px; }
+      .brand-mark { width:34px; height:34px; font-size:13px; }
+      .brand-copy strong { font-size:12px; }
+      .brand-copy small { font-size:8px; }
+      .nav-kicker,.sidebar-foot { display:none; }
+      .main-nav { display:flex; gap:5px; overflow-x:auto; padding:0 0 2px; scrollbar-width:none; }
+      .main-nav::-webkit-scrollbar { display:none; }
+      .nav-link { min-height:38px; flex:0 0 auto; padding:0 11px; font-size:11px; }
+      .nav-link.is-active::before { left:9px; right:9px; top:auto; bottom:-1px; width:auto; height:2px; }
+      .nav-lock { margin:0 0 6px; padding:9px 10px; }
+      .topbar { min-height:60px; padding:11px 16px; }
+      .topbar-title span { font-size:8px; }
+      .topbar-title strong { font-size:12px; }
+      .topbar-state { padding:7px 8px; font-size:8px; }
+      main { padding:18px 14px 34px; }
+    }
+    @media (max-width:420px) {
+      .topbar-state { max-width:118px; font-size:7px; letter-spacing:.06em; }
+      .topbar-state i { flex:0 0 auto; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>⚽ BRASFOOT LA LIGA</h1>
-    <% if match_in_progress %>
-      <span class="lock">🔒 Partida em andamento — termine o jogo para sair</span>
-    <% else %>
-      <a href="<%= root_path %>">Painel</a>
-      <% if career_started? %>
-        <a href="<%= squad_path %>">Elenco</a>
-        <a href="<%= matches_path %>">Jogos</a>
-        <a href="<%= stats_path %>">Estatísticas</a>
+  <% main_menu_context = session[:career_active] != true %>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <%= link_to root_path, class: "brand", aria: { label: "Brasfoot La Liga, menu principal" } do %>
+        <span class="brand-mark">BF</span>
+        <span class="brand-copy"><strong>BRASFOOT</strong><small>LA LIGA / MANAGER</small></span>
       <% end %>
-      <a href="<%= players_path %>">Jogadores ✏️</a>
-      <a href="<%= settings_path %>">Configurações ⚙️</a>
-    <% end %>
-  </header>
-  <main>
-    <% flash.each do |type, msg| %>
-      <div class="flash <%= type %>"><%= msg %></div>
-    <% end %>
-    <%= yield %>
-  </main>
+
+      <% if match_in_progress %>
+        <div class="nav-lock"><span class="lock-light"></span><span><strong>PARTIDA AO VIVO</strong><small>Menu bloqueado durante o jogo</small></span></div>
+      <% else %>
+        <% if main_menu_context %>
+          <div class="nav-kicker">Menu principal</div>
+          <nav class="main-nav" aria-label="Navegação principal">
+            <%= link_to "Menu principal", root_path, class: "nav-link is-active", aria: { current: "page" } %>
+            <%= link_to "Editar jogadores", players_path, class: "nav-link" %>
+            <%= link_to "Configurações", settings_path, class: "nav-link" %>
+          </nav>
+        <% else %>
+          <div class="nav-kicker">Gestão da carreira</div>
+          <nav class="main-nav" aria-label="Navegação da carreira">
+            <% if career_started? %>
+              <%= link_to "Sair", root_path, class: "nav-link exit" %>
+            <% end %>
+            <%= link_to "Carreira", career_path, class: "nav-link #{'is-active' if controller_name == 'dashboard' && action_name == 'show'}", aria: { current: controller_name == "dashboard" && action_name == "show" ? "page" : nil } %>
+            <% if career_started? %>
+              <%= link_to "Elenco", squad_path, class: "nav-link #{'is-active' if current_page?(squad_path)}", aria: { current: current_page?(squad_path) ? "page" : nil } %>
+              <%= link_to "Calendário", matches_path, class: "nav-link #{'is-active' if controller_name == 'matches'}", aria: { current: controller_name == "matches" ? "page" : nil } %>
+              <%= link_to "Estatísticas", stats_path, class: "nav-link #{'is-active' if current_page?(stats_path)}", aria: { current: current_page?(stats_path) ? "page" : nil } %>
+            <% end %>
+            <%= link_to "Jogadores", players_path, class: "nav-link #{'is-active' if controller_name == 'players'}", aria: { current: controller_name == "players" ? "page" : nil } %>
+            <%= link_to "Configurações", settings_path, class: "nav-link #{'is-active' if controller_name == 'settings'}", aria: { current: controller_name == "settings" ? "page" : nil } %>
+          </nav>
+        <% end %>
+      <% end %>
+
+      <div class="sidebar-foot"><span><%= main_menu_context ? "Menu do jogo" : "Status do clube" %></span><strong><%= main_menu_context ? (career_started? ? "CARREIRA SALVA" : "SEM CARREIRA") : (career_started? ? "CARREIRA ATIVA" : "ESCOLHA SEU CLUBE") %></strong></div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-title"><span>La Liga / modo carreira</span><strong><%= match_in_progress ? "Central da partida" : action_name == "menu" ? "Menu principal" : action_name == "new_game" ? "Nova carreira" : main_menu_context && controller_name == "settings" ? "Configurações" : main_menu_context && controller_name == "players" ? "Base de jogadores" : "Gestão do clube" %></strong></div>
+        <div class="topbar-state"><i></i><%= match_in_progress ? "AO VIVO" : main_menu_context ? (career_started? ? "SAVE DISPONÍVEL" : "NOVO JOGO") : "CARREIRA" %></div>
+      </header>
+      <main>
+        <% flash.each do |type, msg| %>
+          <div class="flash <%= type %>"><%= msg %></div>
+        <% end %>
+        <%= yield %>
+      </main>
+    </div>
+  </div>
 </body>
 </html>

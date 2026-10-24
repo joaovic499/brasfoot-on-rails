@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "dashboard#show"
+  root "dashboard#menu"
+  get "menu",     to: "dashboard#menu",     as: :main_menu
+  get "new_game", to: "dashboard#new_game", as: :new_game
+  get "career",   to: "dashboard#show",     as: :career
   post "start",      to: "dashboard#start",      as: :start
   post "play_round", to: "dashboard#play_round", as: :play_round
   post "reset",      to: "dashboard#reset",      as: :reset

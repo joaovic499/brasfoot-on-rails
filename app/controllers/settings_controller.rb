@@ -1,8 +1,8 @@
 class SettingsController < ApplicationController
   def show
     @speed = Setting.game_speed
-    @career = Career.current
-    @pending = Match.where(played: false).count
+    @career = Career.current if session[:career_active] == true
+    @pending = Match.where(played: false).count if @career
   end
 
   def update
@@ -17,8 +17,8 @@ class SettingsController < ApplicationController
 
   # Simula todas as partidas que faltam (as do seu time e as dos outros)
   def simulate_season
-    unless Career.current
-      return redirect_to(settings_path, status: :see_other, alert: "Inicie uma carreira primeiro.")
+    unless session[:career_active] == true && Career.current
+      return redirect_to(settings_path, status: :see_other, alert: "Carregue uma carreira antes de simular a temporada.")
     end
     pending = Match.pending.to_a
     if pending.empty?
@@ -26,6 +26,6 @@ class SettingsController < ApplicationController
     end
 
     pending.each(&:simulate!)
-    redirect_to root_path, status: :see_other, notice: "Temporada simulada! #{pending.size} partidas jogadas."
+    redirect_to career_path, status: :see_other, notice: "Temporada simulada! #{pending.size} partidas jogadas."
   end
 end

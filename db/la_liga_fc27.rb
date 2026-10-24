@@ -301,9 +301,17 @@ ActiveRecord::Base.transaction do
   SQUADS.each do |name, data|
     team = Team.create!(name: name, short_name: data[:short], color: data[:color], stadium: data[:stadium])
     data[:players].each do |pname, pos, ovr, alts, at|
-      team.players.create!(name: pname, position: pos, overall: ovr, alt_positions: (alts || []).join(","),
-                           pace: at&.[](0), shooting: at&.[](1), passing: at&.[](2),
-                           dribbling: at&.[](3), defending: at&.[](4), physical: at&.[](5))
+      age = PlayerTemplate.seed_age_for(name, pname)
+      player = team.players.create!(name: pname, position: pos, overall: ovr, age: age,
+                                    alt_positions: (alts || []).join(","), pace: at&.[](0),
+                                    shooting: at&.[](1), passing: at&.[](2), dribbling: at&.[](3),
+                                    defending: at&.[](4), physical: at&.[](5))
+      PlayerTemplate.create!(team: team, source_player_id: player.id, name: player.name,
+                             position: player.position, overall: player.overall,
+                             alt_positions: player.alt_positions, age: age, stamina: player.stamina,
+                             photo_url: PlayerTemplate.seed_photo_url_for(name, pname),
+                             pace: player.pace, shooting: player.shooting, passing: player.passing,
+                             dribbling: player.dribbling, defending: player.defending, physical: player.physical)
     end
     team.auto_lineup!("4-3-3")
   end

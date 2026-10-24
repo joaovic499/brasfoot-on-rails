@@ -1,34 +1,55 @@
 <% if @career.nil? %>
-  <div class="card">
-    <h2>Escolha seu time</h2>
-    <p class="mut">Campeonato de pontos corridos, turno e returno. Quem leva o título?</p>
-    <div class="grid3">
+  <div class="card panel-hero">
+    <div class="panel-header">
+      <div>
+        <p class="eyebrow"><%= @new_game ? "NOVA CARREIRA" : "MODO CARREIRA" %></p>
+        <h2>Escolha seu time</h2>
+      </div>
+    </div>
+    <p class="mut"><%= @replace_existing_career ? "Uma nova carreira substituirá o progresso salvo. Escolha seu clube para continuar." : "Campeonato de pontos corridos, turno e returno. Quem leva o título?" %></p>
+    <div class="grid3 team-grid">
       <% @teams.each do |t| %>
         <% best = t.players.order(overall: :desc).to_a %>
-        <div class="card" style="border-top:4px solid <%= t.color %>">
-          <h3 style="margin-top:0"><%= t.name %></h3>
-          <p class="mut"><%= t.stadium %></p>
+        <div class="team-card" style="border-top:4px solid <%= t.color %>">
+          <div class="team-card-head">
+            <div class="team-card-crest"><%= team_crest(t, size: 52) %></div>
+            <div>
+              <h3><%= t.name %></h3>
+              <div class="team-short"><%= t.short_name %></div>
+            </div>
+          </div>
+          <p class="mut stadium"><%= t.stadium %></p>
           <div class="stats">
             <div><div class="mut">Geral</div><%= ovr_badge t.overall %></div>
             <div><div class="mut">Elenco</div><strong><%= best.size %></strong></div>
           </div>
-          <p>
+          <div class="starline">
             <% best.first(3).each do |p| %>
-              <%= ovr_badge p.overall %> <%= p.name %><br>
+              <div class="starline-row">
+                <%= ovr_badge p.overall %>
+                <span><%= p.name %></span>
+              </div>
             <% end %>
-          </p>
-          <%= button_to "Treinar #{t.short_name}", start_path(team_id: t.id), class: "btn" %>
+          </div>
+          <%= button_to(@replace_existing_career ? "Nova carreira · #{t.short_name}" : "Treinar #{t.short_name}",
+                        start_path(team_id: t.id, replace_career: @replace_existing_career ? "1" : nil),
+                        class: "btn",
+                        form: { onsubmit: @replace_existing_career ? "return confirm('A carreira atual e seu progresso serão substituídos. Deseja continuar?')" : nil }) %>
         </div>
       <% end %>
     </div>
   </div>
 <% else %>
   <% team = @career.team %>
-  <div class="card" style="border-left:6px solid <%= team.color %>">
-    <div class="row" style="justify-content:space-between">
-      <div>
-        <h2 style="margin:0"><%= team.name %></h2>
-        <span class="mut"><%= team.stadium %></span>
+  <div class="card team-hero" style="border-left:6px solid <%= team.color %>">
+    <div class="row hero-row">
+      <div class="team-hero-head">
+        <div class="team-card-crest"><%= team_crest(team, size: 64) %></div>
+        <div>
+          <p class="eyebrow">SEU CLUBE</p>
+          <h2><%= team.name %></h2>
+          <span class="mut"><%= team.stadium %></span>
+        </div>
       </div>
       <div class="stats">
         <div><div class="mut">Geral</div><%= ovr_badge team.overall %></div>
@@ -75,7 +96,13 @@
       <% @standings.each_with_index do |s, i| %>
         <tr class="<%= 'me' if s.team.id == team.id %>">
           <td><%= i + 1 %></td>
-          <td><span class="teamdot" style="background:<%= s.team.color %>"></span><%= s.team.name %></td>
+          <td>
+            <span class="team-name-wrap">
+              <span class="teamdot" style="background:<%= s.team.color %>"></span>
+              <%= team_crest(s.team, size: 24, klass: "mini-crest") %>
+              <%= s.team.name %>
+            </span>
+          </td>
           <td class="n"><strong><%= s.points %></strong></td>
           <td class="n"><%= s.played %></td><td class="n"><%= s.won %></td><td class="n"><%= s.drawn %></td><td class="n"><%= s.lost %></td>
           <td class="n"><%= s.gf %></td><td class="n"><%= s.ga %></td><td class="n"><%= s.gd %></td>

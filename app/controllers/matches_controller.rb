@@ -25,6 +25,7 @@ class MatchesController < ApplicationController
       return redirect_to(root_path, status: :see_other, alert: "Você só acompanha as partidas do seu time.")
     end
 
+    session[:career_active] = true
     @team = @career.team
     @by_slot = @team.lineup_by_slot
     @bench = @team.bench_players
@@ -78,6 +79,9 @@ class MatchesController < ApplicationController
 
   def state_json(evs)
     { minute: @match.minute, status: @match.status,
-      home_goals: @match.home_goals, away_goals: @match.away_goals, events: evs }
+      home_goals: @match.home_goals, away_goals: @match.away_goals, events: evs,
+      stamina: @career.team.players.each_with_object({}) do |player, values|
+        values[player.id] = @match.stamina_for(player)
+      end }
   end
 end

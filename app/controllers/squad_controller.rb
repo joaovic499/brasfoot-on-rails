@@ -5,7 +5,7 @@ class SquadController < ApplicationController
     @team = @career.team
     # garante que todo titular tenha posição no campo
     @team.auto_lineup! if @team.players.where(starter: true, slot: nil).exists?
-    players = @team.players.to_a
+    players = @team.players.includes(:base_template).to_a
     @by_slot = players.select(&:slot).index_by(&:slot)
     @bench = players.reject(&:slot).sort_by { |p| [Team::POS_ORDER.index(p.position), -p.overall] }
   end

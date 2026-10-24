@@ -10,6 +10,7 @@ class Career < ApplicationRecord
     transaction do
       destroy_all
       Match.destroy_all
+      PlayerTemplate.sync_to_players!
       Match.generate_fixtures!(team)
       Team.playable.each { |t| t.auto_lineup!("4-3-3") }
       create!(team: team)

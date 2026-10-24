@@ -4,91 +4,70 @@ class PlayersController < ApplicationController
 
   def index
     @teams = Team.order(:name)
-    @team = Team.find_by(id: params[:team_id]) || Career.current&.team || @teams.first
-    @players = @team ? @team.sorted_players : []
-    @locked = Career.exists?
+    @team = Team.find_by(id: params[:team_id]) || @teams.first
+    @players = @team ? PlayerTemplate.where(team_id: @team.id).sort_by { |player| [Positions::ORDER.index(player.position), -player.overall] } : []
+    @locked = session[:career_active] == true
   end
 
   # Salva todos os jogadores da tela de uma vez (só grava quem foi alterado)
   def bulk
     rows = params[:players] || {}
-    players = Player.where(id: rows.keys).index_by { |p| p.id.to_s }
-    teams = []
-    old_teams = []
+    players = PlayerTemplate.where(id: rows.keys).index_by { |player| player.id.to_s }
     errors = []
     updated = 0
 
     rows.each do |id, attrs|
-      pl = players[id.to_s]
-      next unless pl
-      a = attrs.permit(:name, :overall, :position, :team_id, :alt1, :alt2, *Player::ATTRS)
+      template = players[id.to_s]
+      next unless template
+      a = attrs.permit(:name, :overall, :position, :team_id, :alt1, :alt2, :age, :stamina, :photo_url, *Player::ATTRS)
 
-      old_team = pl.team
-      pl.assign_attributes(a.slice(:name, :overall, :position, :team_id, *Player::ATTRS))
-      pl.alt_positions = [a[:alt1], a[:alt2]].map(&:to_s).reject(&:blank?).uniq.join(",")
+      template.assign_attributes(a.slice(:name, :overall, :position, :team_id, :age, :stamina, :photo_url, *Player::ATTRS))
+      template.alt_positions = [a[:alt1], a[:alt2]].map(&:to_s).reject(&:blank?).uniq.join(",")
       # mudou atributos e não mexeu na Força: a Força é recalculada pelos atributos
-      if (pl.changed & Player::ATTRS.map(&:to_s)).any? && !pl.overall_changed? && (calc = pl.overall_from_attrs)
-        pl.overall = calc
+      if (template.changed & PlayerTemplate::ATTRS.map(&:to_s)).any? && !template.overall_changed? && (calc = template.overall_from_attrs)
+        template.overall = calc
       end
-      next unless pl.changed?
+      next unless template.changed?
 
-      moved = pl.team_id_changed?
-      pl.slot = nil if moved || pl.position_changed? # volta pro banco; o reparo reescala se precisar
-      pl.starter = false if pl.slot.nil?
-
-      if pl.save
+      if template.save
         updated += 1
-        teams << old_team << pl.team
-        old_teams << old_team if moved
       else
-        errors << "#{pl.name}: #{pl.errors.full_messages.to_sentence}"
+        errors << "#{template.name}: #{template.errors.full_messages.to_sentence}"
       end
     end
 
-    refresh_lineups(teams.uniq)
-
-    notice = updated.zero? ? "Nenhuma alteração para salvar." : "#{updated} jogador(es) atualizado(s)."
-    short = old_teams.uniq.reject { |t| t.reload.playable? }
-    notice += " Atenção: #{short.map(&:name).join(', ')} ficou sem elenco mínimo (11 jogadores e 1 goleiro)." if short.any?
+    notice = updated.zero? ? "Nenhuma alteração para salvar." : "#{updated} jogador(es) da base atualizados."
     flash_opts = { notice: notice }
-    flash_opts[:alert] = "Não salvou: #{errors.join(' | ')}" if errors.any?
+    flash_opts[:alert] = "Não salvou na base: #{errors.join(' | ')}" if errors.any?
     redirect_to players_path(team_id: params[:view_team_id]), status: :see_other, **flash_opts
   end
 
   def create
-    pl = Player.new(player_params)
-    pl.alt_positions = alts_from_params
-    pl.overall = pl.overall_from_attrs || pl.overall # com os 6 atributos, a Força vem deles
-    if pl.save
-      refresh_lineups([pl.team])
-      redirect_to players_path(team_id: pl.team_id), status: :see_other, notice: "#{pl.name} adicionado."
+    template = PlayerTemplate.new(player_params)
+    template.alt_positions = alts_from_params
+    template.overall = template.overall_from_attrs || template.overall
+    if template.save
+      redirect_to players_path(team_id: template.team_id), status: :see_other, notice: "#{template.name} adicionado à base de jogadores."
     else
       redirect_to players_path(team_id: params[:view_team_id]), status: :see_other,
-                  alert: "Não foi possível criar: #{pl.errors.full_messages.to_sentence}"
+                  alert: "Não foi possível adicionar à base: #{template.errors.full_messages.to_sentence}"
     end
   end
 
   private
 
   def block_edits_during_career
-    return unless Career.exists?
-    redirect_to players_path(team_id: params[:view_team_id]), status: :see_other,
-                alert: "Edição bloqueada: não dá para alterar jogadores durante a carreira. Use “Reiniciar carreira” no Painel para editar de novo."
+    return unless session[:career_active] == true
+    redirect_to players_path, status: :see_other,
+                alert: "Edição da base bloqueada enquanto a carreira está aberta. Saia para o menu principal; o save será mantido."
   end
 
   def player_params
-    params.require(:player).permit(:name, :overall, :position, :team_id, *Player::ATTRS)
+    params.require(:player).permit(:name, :overall, :position, :team_id, :age, :stamina, *PlayerTemplate::ATTRS)
   end
 
   def alts_from_params
     [params.dig(:player, :alt1), params.dig(:player, :alt2)].map(&:to_s).reject(&:blank?).uniq.join(",")
   end
 
-  # Time da CPU escolhe o melhor 11 de novo; no seu time só conserta o que quebrou
-  def refresh_lineups(teams)
-    teams.each do |t|
-      t.reload
-      t.user_controlled? ? t.repair_lineup! : t.auto_lineup!
-    end
-  end
 end

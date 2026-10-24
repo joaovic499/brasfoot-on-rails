@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_01_000010) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_24_000003) do
   create_table "careers", force: :cascade do |t|
     t.integer "team_id", null: false
     t.datetime "created_at", null: false
@@ -54,6 +54,28 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_01_000010) do
     t.index ["team_id"], name: "index_player_match_stats_on_team_id"
   end
 
+  create_table "player_templates", force: :cascade do |t|
+    t.integer "team_id", null: false
+    t.integer "source_player_id"
+    t.string "name", null: false
+    t.string "position", null: false
+    t.integer "overall", null: false
+    t.string "alt_positions", default: "", null: false
+    t.integer "age", default: 25, null: false
+    t.integer "stamina", default: 80, null: false
+    t.integer "pace"
+    t.integer "shooting"
+    t.integer "passing"
+    t.integer "dribbling"
+    t.integer "defending"
+    t.integer "physical"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo_url"
+    t.index ["source_player_id"], name: "index_player_templates_on_source_player_id", unique: true
+    t.index ["team_id"], name: "index_player_templates_on_team_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.integer "team_id", null: false
     t.string "name", null: false
@@ -70,6 +92,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_01_000010) do
     t.integer "dribbling"
     t.integer "defending"
     t.integer "physical"
+    t.integer "age", default: 25, null: false
+    t.integer "stamina", default: 80, null: false
+    t.integer "fatigue", default: 0, null: false
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
@@ -94,5 +119,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_01_000010) do
   add_foreign_key "careers", "teams"
   add_foreign_key "player_match_stats", "matches"
   add_foreign_key "player_match_stats", "players"
+  add_foreign_key "player_templates", "teams"
   add_foreign_key "players", "teams"
 end

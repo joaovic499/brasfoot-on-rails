@@ -53,7 +53,7 @@
     <div id="finish-box">
       <p style="font-size:18px;font-weight:700">Fim de jogo!</p>
       <%= link_to "Ver resumo", match_path(@match), class: "btn" %>
-      <%= link_to "Painel", root_path, class: "btn sec" %>
+      <%= link_to "Carreira", career_path, class: "btn sec" %>
     </div>
   <% end %>
 </div>
@@ -76,7 +76,7 @@
       <% end %>
     </div>
     <p class="mut" style="margin:0 0 12px">Clique num card do campo e depois num reserva (ou noutro jogador) para trocar; o jogo pausa sozinho. Jogador fora da posição natural perde força (número vermelho) e o “→” mostra quanto ele renderia na vaga. Quem sai não volta, e vale no máximo <%= Match::MAX_SUBS %> substituições. Trocar a formação não conta como substituição.</p>
-    <%= render "shared/lineup_editor", team: @team, by_slot: @by_slot, bench: @bench, form_url: substitute_match_path(@match), banned_ids: @banned %>
+    <%= render "shared/lineup_editor", team: @team, by_slot: @by_slot, bench: @bench, form_url: substitute_match_path(@match), banned_ids: @banned, match: @match %>
   </div>
 
   <script>
@@ -124,6 +124,20 @@
       state = s;
       clock.textContent = s.minute + "'";
       hs.textContent = s.home_goals; as.textContent = s.away_goals;
+      Object.keys(s.stamina || {}).forEach(function (playerId) {
+        var stamina = s.stamina[playerId];
+        document.querySelectorAll('.stamina-wrap[data-stamina-player-id="' + playerId + '"]').forEach(function (bar) {
+          var fill = bar.querySelector('.stamina-bar > span');
+          var value = bar.querySelector('.stamina-meta strong');
+          var label = bar.querySelector('.stamina-meta span');
+          bar.classList.remove('is-good', 'is-warn', 'is-low');
+          bar.classList.add(stamina < 35 ? 'is-low' : stamina < 65 ? 'is-warn' : 'is-good');
+          fill.style.width = stamina + '%';
+          value.textContent = stamina + '%';
+          label.textContent = stamina < 35 ? 'Energia baixa' : 'Energia';
+          bar.setAttribute('aria-valuenow', stamina);
+        });
+      });
       addEvents(s.events || []);
       var mine = (s.events || []).some(function (e) { return e.type === 'red' && String(e.team_id) === box.dataset.teamId; });
       if (mine) {                       // expulsão no SEU time: pausa e recarrega o campo (vaga vazia)

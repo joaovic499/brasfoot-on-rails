@@ -4,7 +4,7 @@ services:
   web:
     build: .
     working_dir: /rails
-    command: bash -lc "bundle install && ./bin/rails db:prepare && ./bin/rails server -b 0.0.0.0 -p 3000"
+    command: bash -lc "bundle install && ./bin/rails db:drop db:create db:migrate && ./bin/rails runner db/la_liga_fc27.rb && ./bin/rails server -b 0.0.0.0 -p 3000"
     ports:
       - "3000:3000"
     volumes:

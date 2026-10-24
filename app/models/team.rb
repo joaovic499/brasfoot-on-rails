@@ -2,6 +2,7 @@ class Team < ApplicationRecord
   POS_ORDER = Positions::ORDER
 
   has_many :players, dependent: :destroy
+  has_many :player_templates, dependent: :destroy
 
   # Um titular em campo: jogador + posição da vaga + força efetiva nessa vaga
   # Quanto cada fator pesa na hora de decidir quem faz o gol (ajuste aqui para deixar mais/menos "finalizador")
@@ -176,11 +177,11 @@ class Team < ApplicationRecord
   end
 
   def lineup_by_slot
-    players.to_a.select(&:slot).index_by(&:slot)
+    players.includes(:base_template).to_a.select(&:slot).index_by(&:slot)
   end
 
   def bench_players
-    players.to_a.reject(&:slot).sort_by { |p| [POS_ORDER.index(p.position), -p.overall] }
+    players.includes(:base_template).to_a.reject(&:slot).sort_by { |p| [POS_ORDER.index(p.position), -p.overall] }
   end
 
   def self.standings

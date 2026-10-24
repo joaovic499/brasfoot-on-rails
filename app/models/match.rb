@@ -94,6 +94,29 @@ class Match < ApplicationRecord
     JSON.parse(subbed_off.presence || "[]")
   end
 
+  def stamina_for(player, at_minute: minute)
+    return 100 - player.fatigue.to_i if played? || !in_progress?
+
+    player.match_stamina_at(player_minutes_at(player.id, at_minute: at_minute))
+  end
+
+  def player_minutes_at(player_id, at_minute: minute)
+    starting = JSON.parse(starting_ids.presence || '{"home":[],"away":[]}').values.flatten
+    entered_at = if starting.include?(player_id)
+                   0
+                 else
+                   sub_events.find { |event| event["in_id"] == player_id }&.fetch("minute", nil)
+                 end
+    return 0 unless entered_at
+
+    exit_event = all_events.find do |event|
+      (event["type"] == "sub" && event["out_id"] == player_id) ||
+        (event["type"] == "red" && event["player_id"] == player_id)
+    end
+    left_at = exit_event ? exit_event["minute"] : at_minute
+    (left_at.to_i - entered_at.to_i).clamp(0, 90)
+  end
+
   # ---------- estado ----------
   def in_progress? = %w[live halftime].include?(status)
 
@@ -217,6 +240,8 @@ class Match < ApplicationRecord
     rows = []
     now = Time.current
 
+    appeared_ids = (start.values.flatten + evs.filter_map { |event| event["in_id"] if event["type"] == "sub" }).uniq
+
     [[home_team, start["home"], home_goals, away_goals], [away_team, start["away"], away_goals, home_goals]].each do |team, ids, gf, ga|
       spans = {} # player_id => { in:, out: }
       ids.each { |pid| spans[pid] = { in: 0, out: 90 } }
@@ -242,13 +267,17 @@ class Match < ApplicationRecord
         minutes = [span[:out] - span[:in], 0].max
         rows << { match_id: id, player_id: pid, team_id: team.id, goals: goals, assists: assists,
                   yellow_cards: yellows, red_cards: reds, minutes: minutes,
-                  rating: compute_rating(pl, goals, assists, yellows, reds, minutes, gf, ga),
+                  rating: compute_rating(pl, goals, assists, yellows, reds, minutes, gf, ga,
+                                         pl.match_stamina_at(minutes)),
                   created_at: now, updated_at: now }
       end
     end
 
     PlayerMatchStat.where(match_id: id).delete_all
     PlayerMatchStat.insert_all(rows) if rows.any?
+    Player.where(team_id: [home_team_id, away_team_id]).find_each do |player|
+      player.recover_after_match!(played: appeared_ids.include?(player.id))
+    end
   end
 
   private
@@ -260,6 +289,15 @@ class Match < ApplicationRecord
     hl = state.lineups[:home]
     al = state.lineups[:away]
     return [] if hl.empty? || al.empty?
+
+    [[hl, home_team], [al, away_team]].each do |lineup, _team|
+      lineup.each do |entry|
+        minutes = in_progress? ? player_minutes_at(entry.player.id, at_minute: m) : m
+        current_stamina = entry.player.match_stamina_at(minutes)
+        penalty = entry.player.overall - entry.player.effective_rating(current_stamina: current_stamina)
+        entry.rating = [entry.player.rating_at(entry.slot_pos) - penalty, 1].max
+      end
+    end
 
     lam_h = expected_goals(home_team.attack(hl), away_team.defense(al), 1.12) * manpower(hl.size, al.size)
     lam_a = expected_goals(away_team.attack(al), home_team.defense(hl), 1.0) * manpower(al.size, hl.size)
@@ -295,8 +333,13 @@ class Match < ApplicationRecord
     evs = []
     if r < RED_P
       entry = pick_weighted(lineup) { |e| CARD_WEIGHT[e.slot_pos] * (e.player.aggression / 65.0) }
-      evs << red_event(team, entry.player, min, "leva o vermelho direto")
-      lineup.delete(entry)
+      if entry.player.should_rotate? && rand < entry.player.injury_risk(forced: true) * 0.45
+        evs << red_event(team, entry.player, min, "se machuca por excesso de cansaço")
+        lineup.delete(entry)
+      else
+        evs << red_event(team, entry.player, min, "leva o vermelho direto")
+        lineup.delete(entry)
+      end
     elsif r < RED_P + YELLOW_P
       # quem já tem amarelo se cuida mais: é bem menos provável tomar o segundo
       entry = pick_weighted(lineup) { |e| CARD_WEIGHT[e.slot_pos] * (e.player.aggression / 65.0) * (state.yellows[e.player.id] >= 1 ? 0.25 : 1.0) }
@@ -323,7 +366,10 @@ class Match < ApplicationRecord
     assist_entry = nil
     if rand < ASSIST_CHANCE
       others = lineup - [scorer_entry]
-      assist_entry = pick_weighted(others) { |e| ASSIST_WEIGHT[e.slot_pos] * (e.player.creativity / 75.0)**ASSIST_SKILL_EXP * (e.rating / 80.0) } if others.any?
+      assist_entry = pick_weighted(others) do |e|
+        base = ASSIST_WEIGHT[e.slot_pos] * (e.player.creativity / 75.0)**ASSIST_SKILL_EXP
+        base * (e.rating / 80.0)
+      end if others.any?
     end
     text = "⚽ GOOOL! #{scorer.name} marca para o #{team.name}!"
     text += " Assistência de #{assist_entry.player.name}." if assist_entry
@@ -332,7 +378,7 @@ class Match < ApplicationRecord
   end
 
   def chance_event(team, lineup, opp_lineup, min)
-    shooter = pick_weighted(lineup, &:scorer_weight).player
+    shooter = pick_weighted(lineup) { |e| e.scorer_weight * (e.rating / e.player.overall.to_f) }.player
     keeper = opp_lineup.find { |e| e.slot_pos == "GK" }&.player
     texts = [
       "#{shooter.name} chuta de fora da área e a bola passa perto.",
@@ -382,7 +428,7 @@ class Match < ApplicationRecord
 
   # Nota da partida (3.0 a 10.0): qualidade do jogador, gols, assistências, cartões,
   # resultado do time, solidez defensiva e um pouco de sorte.
-  def compute_rating(player, goals, assists, yellows, reds, minutes, gf, ga)
+  def compute_rating(player, goals, assists, yellows, reds, minutes, gf, ga, final_stamina)
     r = 6.0 + (player.overall - 75) * 0.02
     r += 1.0 * [goals, 4].min + 0.7 * [assists, 3].min
     r -= 0.2 * yellows + 1.5 * reds
@@ -391,6 +437,7 @@ class Match < ApplicationRecord
       r += 0.5 if ga.zero?
       r -= 0.2 * [ga, 4].min
     end
+    r -= player.stamina_performance_penalty(final_stamina) / 10.0
     r += (rand + rand + rand - 1.5) * 0.8 # variação aleatória (~±1)
     weight = 0.35 + 0.65 * [minutes / 90.0, 1.0].min # quem jogou pouco tem nota mais "neutra"
     r = 6.0 + (r - 6.0) * weight

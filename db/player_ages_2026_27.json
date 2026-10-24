@@ -1,0 +1,4422 @@
+{
+  "source": "Transfermarkt LaLiga 26/27",
+  "ages": [
+    {
+      "team": "Barcelona",
+      "player": "Yamal",
+      "age": 19
+    },
+    {
+      "team": "Barcelona",
+      "player": "Rodri",
+      "age": 30
+    },
+    {
+      "team": "Barcelona",
+      "player": "Pedri",
+      "age": 23
+    },
+    {
+      "team": "Barcelona",
+      "player": "Raphinha",
+      "age": 29
+    },
+    {
+      "team": "Barcelona",
+      "player": "Cubarsí",
+      "age": 19
+    },
+    {
+      "team": "Barcelona",
+      "player": "Joan García",
+      "age": 25
+    },
+    {
+      "team": "Barcelona",
+      "player": "De Jong",
+      "age": 29
+    },
+    {
+      "team": "Barcelona",
+      "player": "Fermín López",
+      "age": 23
+    },
+    {
+      "team": "Barcelona",
+      "player": "Eric García",
+      "age": 25
+    },
+    {
+      "team": "Barcelona",
+      "player": "Koundé",
+      "age": 27
+    },
+    {
+      "team": "Barcelona",
+      "player": "Olmo",
+      "age": 28
+    },
+    {
+      "team": "Barcelona",
+      "player": "João Cancelo",
+      "age": 32
+    },
+    {
+      "team": "Barcelona",
+      "player": "Gavi",
+      "age": 22
+    },
+    {
+      "team": "Barcelona",
+      "player": "Anthony Gordon",
+      "age": 25
+    },
+    {
+      "team": "Barcelona",
+      "player": "Balde",
+      "age": 23
+    },
+    {
+      "team": "Barcelona",
+      "player": "Karim Adeyemi",
+      "age": 24
+    },
+    {
+      "team": "Barcelona",
+      "player": "Szczęsny",
+      "age": 36
+    },
+    {
+      "team": "Barcelona",
+      "player": "Gerard Martín",
+      "age": 24
+    },
+    {
+      "team": "Barcelona",
+      "player": "Andreas Christensen",
+      "age": 30
+    },
+    {
+      "team": "Barcelona",
+      "player": "Marc Bernal",
+      "age": 19
+    },
+    {
+      "team": "Barcelona",
+      "player": "Casadó",
+      "age": 23
+    },
+    {
+      "team": "Barcelona",
+      "player": "Roony Bardghji",
+      "age": 20
+    },
+    {
+      "team": "Barcelona",
+      "player": "Héctor Fort",
+      "age": 20
+    },
+    {
+      "team": "Barcelona",
+      "player": "Xavi Espart",
+      "age": 19
+    },
+    {
+      "team": "Barcelona",
+      "player": "Jesse Bisiwu",
+      "age": 18
+    },
+    {
+      "team": "Barcelona",
+      "player": "Hamza Abdelkarim",
+      "age": 18
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Mbappé",
+      "age": 27
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Courtois",
+      "age": 34
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Bellingham",
+      "age": 23
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Vini Jr",
+      "age": 26
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Valverde",
+      "age": 28
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Cucurella",
+      "age": 28
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Trent Alexander-Arnold",
+      "age": 28
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Tchouaméni",
+      "age": 26
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Yan Diomande",
+      "age": 19
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Militão",
+      "age": 28
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Bernardo Silva",
+      "age": 32
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Rodrygo",
+      "age": 25
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Konaté",
+      "age": 27
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Dumfries",
+      "age": 30
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Rüdiger",
+      "age": 33
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Arda Güler",
+      "age": 21
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Camavinga",
+      "age": 23
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Carreras",
+      "age": 23
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Huijsen",
+      "age": 21
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Brahim Díaz",
+      "age": 27
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Mendy",
+      "age": 31
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Lunin",
+      "age": 27
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Endrick",
+      "age": 20
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Asencio",
+      "age": 23
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Carlos Espí",
+      "age": 21
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Thiago Pitarch",
+      "age": 19
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Oblak",
+      "age": 33
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Julián Álvarez",
+      "age": 26
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Marcos Llorente",
+      "age": 31
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Grimaldo",
+      "age": 31
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Hjulmand",
+      "age": 27
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Pablo Barrios",
+      "age": 23
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Hancko",
+      "age": 28
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Baena",
+      "age": 25
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Lookman",
+      "age": 29
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Sørloth",
+      "age": 30
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Giuliano Simeone",
+      "age": 23
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Musso",
+      "age": 32
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Cristian Romero",
+      "age": 28
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Giménez",
+      "age": 31
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Pubill",
+      "age": 23
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Koke",
+      "age": 34
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Le Normand",
+      "age": 29
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Johnny Cardoso",
+      "age": 25
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Lee Kang In",
+      "age": 25
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Thomas Lemar",
+      "age": 30
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Obed Vargas",
+      "age": 21
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Rodri Mendoza",
+      "age": 21
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Carlos Martín",
+      "age": 24
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Arnau Ortiz",
+      "age": 24
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Aleksa Purić",
+      "age": 23
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Unai Simón",
+      "age": 29
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Nico Williams",
+      "age": 24
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Aymeric Laporte",
+      "age": 32
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Sancet",
+      "age": 26
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Vivian",
+      "age": 27
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Iñaki Williams",
+      "age": 32
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Yeray",
+      "age": 31
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Jauregizar",
+      "age": 22
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Yuri Berchiche",
+      "age": 36
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Berenguer",
+      "age": 31
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Ruiz de Galarreta",
+      "age": 33
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Guruzeta",
+      "age": 30
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Aitor Paredes",
+      "age": 26
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Beñat Prados",
+      "age": 25
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Areso",
+      "age": 27
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Robert Navarro",
+      "age": 24
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Gorosabel",
+      "age": 30
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Hugo Rincón",
+      "age": 23
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Álvaro Djaló",
+      "age": 27
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Peio Canales",
+      "age": 21
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Adama Boiro",
+      "age": 24
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Rego",
+      "age": 23
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Unai Vencedor",
+      "age": 25
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Maroan",
+      "age": 25
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Nico Serrano",
+      "age": 23
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Álex Padilla",
+      "age": 23
+    },
+    {
+      "team": "Osasuna",
+      "player": "Ante Budimir",
+      "age": 35
+    },
+    {
+      "team": "Osasuna",
+      "player": "Sergio Herrera",
+      "age": 33
+    },
+    {
+      "team": "Osasuna",
+      "player": "Enzo Boyomo",
+      "age": 25
+    },
+    {
+      "team": "Osasuna",
+      "player": "Valentin Rosier",
+      "age": 30
+    },
+    {
+      "team": "Osasuna",
+      "player": "Moncayola",
+      "age": 28
+    },
+    {
+      "team": "Osasuna",
+      "player": "Aitor Fernández",
+      "age": 35
+    },
+    {
+      "team": "Osasuna",
+      "player": "Rubén García",
+      "age": 33
+    },
+    {
+      "team": "Osasuna",
+      "player": "Catena",
+      "age": 31
+    },
+    {
+      "team": "Osasuna",
+      "player": "Abel Bretones",
+      "age": 26
+    },
+    {
+      "team": "Osasuna",
+      "player": "Aimar Oroz",
+      "age": 24
+    },
+    {
+      "team": "Osasuna",
+      "player": "Diego Rico",
+      "age": 33
+    },
+    {
+      "team": "Osasuna",
+      "player": "Moi Gómez",
+      "age": 32
+    },
+    {
+      "team": "Osasuna",
+      "player": "Lucas Torró",
+      "age": 32
+    },
+    {
+      "team": "Osasuna",
+      "player": "Raúl García",
+      "age": 25
+    },
+    {
+      "team": "Osasuna",
+      "player": "Raúl Moro",
+      "age": 23
+    },
+    {
+      "team": "Osasuna",
+      "player": "Dubasin",
+      "age": 26
+    },
+    {
+      "team": "Osasuna",
+      "player": "Herrando",
+      "age": 25
+    },
+    {
+      "team": "Osasuna",
+      "player": "Iker Muñoz",
+      "age": 24
+    },
+    {
+      "team": "Osasuna",
+      "player": "Kike Barja",
+      "age": 29
+    },
+    {
+      "team": "Osasuna",
+      "player": "Osambela",
+      "age": 21
+    },
+    {
+      "team": "Osasuna",
+      "player": "Rockson Yeboah",
+      "age": 22
+    },
+    {
+      "team": "Osasuna",
+      "player": "Arguibide",
+      "age": 21
+    },
+    {
+      "team": "Osasuna",
+      "player": "Mauro Echegoyen",
+      "age": 21
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Iago Aspas",
+      "age": 39
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Borja Iglesias",
+      "age": 33
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Aleix Febas",
+      "age": 30
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Marcos Alonso",
+      "age": 35
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Ilaix Moriba",
+      "age": 23
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Ionuț Andrei Radu",
+      "age": 29
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Carl Starfelt",
+      "age": 31
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Javi Galán",
+      "age": 31
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Javi Rueda",
+      "age": 24
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Matías Vecino",
+      "age": 35
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Williot Swedberg",
+      "age": 22
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Álvaro Núñez",
+      "age": 26
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Carreira",
+      "age": 26
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Javi Rodríguez",
+      "age": 23
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Hugo Álvarez",
+      "age": 23
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Altay Bayındır",
+      "age": 28
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Ferran Jutglà",
+      "age": 27
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Miguel Román",
+      "age": 23
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Pablo Durán",
+      "age": 25
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Carles Pérez",
+      "age": 28
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Iván Villar",
+      "age": 29
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Jones El-Abdellaoui",
+      "age": 20
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Abdoulaye Faye",
+      "age": 22
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Yoel Lago",
+      "age": 22
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Hugo González",
+      "age": 23
+    },
+    {
+      "team": "Alavés",
+      "player": "Toni Martínez",
+      "age": 29
+    },
+    {
+      "team": "Alavés",
+      "player": "Antonio Blanco",
+      "age": 26
+    },
+    {
+      "team": "Alavés",
+      "player": "Sivera",
+      "age": 30
+    },
+    {
+      "team": "Alavés",
+      "player": "Lucas Boyé",
+      "age": 30
+    },
+    {
+      "team": "Alavés",
+      "player": "Nahuel Tenaglia",
+      "age": 30
+    },
+    {
+      "team": "Alavés",
+      "player": "Jonny",
+      "age": 32
+    },
+    {
+      "team": "Alavés",
+      "player": "Denis Suárez",
+      "age": 32
+    },
+    {
+      "team": "Alavés",
+      "player": "Aleñá",
+      "age": 28
+    },
+    {
+      "team": "Alavés",
+      "player": "Ander Guevara",
+      "age": 29
+    },
+    {
+      "team": "Alavés",
+      "player": "Abde Rebbach",
+      "age": 28
+    },
+    {
+      "team": "Alavés",
+      "player": "Pablo Ibáñez",
+      "age": 28
+    },
+    {
+      "team": "Alavés",
+      "player": "Carlos Protesoni",
+      "age": 28
+    },
+    {
+      "team": "Alavés",
+      "player": "Nicolás Valentini",
+      "age": 25
+    },
+    {
+      "team": "Alavés",
+      "player": "Ángel Pérez",
+      "age": 24
+    },
+    {
+      "team": "Alavés",
+      "player": "Miguel Rodríguez",
+      "age": 23
+    },
+    {
+      "team": "Alavés",
+      "player": "Yusi",
+      "age": 21
+    },
+    {
+      "team": "Alavés",
+      "player": "Adrián Rodríguez",
+      "age": 25
+    },
+    {
+      "team": "Alavés",
+      "player": "Ville Koski",
+      "age": 24
+    },
+    {
+      "team": "Alavés",
+      "player": "Mikel Rodríguez",
+      "age": 24
+    },
+    {
+      "team": "Alavés",
+      "player": "Mariano",
+      "age": 33
+    },
+    {
+      "team": "Alavés",
+      "player": "Owono",
+      "age": 25
+    },
+    {
+      "team": "Alavés",
+      "player": "Selu Diallo",
+      "age": 23
+    },
+    {
+      "team": "Alavés",
+      "player": "Hugo Novoa",
+      "age": 23
+    },
+    {
+      "team": "Alavés",
+      "player": "Aitor Mañas",
+      "age": 23
+    },
+    {
+      "team": "Alavés",
+      "player": "Xanet Oláiz",
+      "age": 21
+    },
+    {
+      "team": "Alavés",
+      "player": "Tomás Mendes",
+      "age": 21
+    },
+    {
+      "team": "Elche",
+      "player": "Valera",
+      "age": 24
+    },
+    {
+      "team": "Elche",
+      "player": "Matías Dituro",
+      "age": 39
+    },
+    {
+      "team": "Elche",
+      "player": "David Affengruber",
+      "age": 25
+    },
+    {
+      "team": "Elche",
+      "player": "Bigas",
+      "age": 36
+    },
+    {
+      "team": "Elche",
+      "player": "Marc Aguado",
+      "age": 26
+    },
+    {
+      "team": "Elche",
+      "player": "Víctor Chust",
+      "age": 26
+    },
+    {
+      "team": "Elche",
+      "player": "Facundo Buonanotte",
+      "age": 21
+    },
+    {
+      "team": "Elche",
+      "player": "Martim Neto",
+      "age": 23
+    },
+    {
+      "team": "Elche",
+      "player": "Josan",
+      "age": 36
+    },
+    {
+      "team": "Elche",
+      "player": "Gonzalo Villar",
+      "age": 28
+    },
+    {
+      "team": "Elche",
+      "player": "Ezequiel Ponce",
+      "age": 29
+    },
+    {
+      "team": "Elche",
+      "player": "Fer Niño",
+      "age": 26
+    },
+    {
+      "team": "Elche",
+      "player": "Lucas Cepeda",
+      "age": 23
+    },
+    {
+      "team": "Elche",
+      "player": "Tete Morente",
+      "age": 29
+    },
+    {
+      "team": "Elche",
+      "player": "Federico Redondo",
+      "age": 23
+    },
+    {
+      "team": "Elche",
+      "player": "Grady Diangana",
+      "age": 28
+    },
+    {
+      "team": "Elche",
+      "player": "Yago Santiago",
+      "age": 23
+    },
+    {
+      "team": "Elche",
+      "player": "Buba Sangaré",
+      "age": 19
+    },
+    {
+      "team": "Elche",
+      "player": "John Donald",
+      "age": 26
+    },
+    {
+      "team": "Elche",
+      "player": "Abiel Osorio",
+      "age": 24
+    },
+    {
+      "team": "Elche",
+      "player": "Matia Barzić",
+      "age": 22
+    },
+    {
+      "team": "Elche",
+      "player": "Bambo Diaby",
+      "age": 28
+    },
+    {
+      "team": "Elche",
+      "player": "Iturbe",
+      "age": 23
+    },
+    {
+      "team": "Elche",
+      "player": "Ali Houary",
+      "age": 21
+    },
+    {
+      "team": "Elche",
+      "player": "Adam Boayar",
+      "age": 21
+    },
+    {
+      "team": "Getafe",
+      "player": "David Soria",
+      "age": 33
+    },
+    {
+      "team": "Getafe",
+      "player": "Martín Satriano",
+      "age": 25
+    },
+    {
+      "team": "Getafe",
+      "player": "Dakonam Djené",
+      "age": 34
+    },
+    {
+      "team": "Getafe",
+      "player": "Zaid Romero",
+      "age": 26
+    },
+    {
+      "team": "Getafe",
+      "player": "Johan Mojica",
+      "age": 34
+    },
+    {
+      "team": "Getafe",
+      "player": "Borja Mayoral",
+      "age": 29
+    },
+    {
+      "team": "Getafe",
+      "player": "Christantus Uche",
+      "age": 23
+    },
+    {
+      "team": "Getafe",
+      "player": "Orel Mangala",
+      "age": 28
+    },
+    {
+      "team": "Getafe",
+      "player": "Enes Ünal",
+      "age": 29
+    },
+    {
+      "team": "Getafe",
+      "player": "Mario Martín",
+      "age": 22
+    },
+    {
+      "team": "Getafe",
+      "player": "Terrats",
+      "age": 26
+    },
+    {
+      "team": "Getafe",
+      "player": "Sebastián Boselli",
+      "age": 22
+    },
+    {
+      "team": "Getafe",
+      "player": "Kiko Femenía",
+      "age": 35
+    },
+    {
+      "team": "Getafe",
+      "player": "Abdelkabir Abqar",
+      "age": 27
+    },
+    {
+      "team": "Getafe",
+      "player": "Andrés García",
+      "age": 23
+    },
+    {
+      "team": "Getafe",
+      "player": "Saba Sazonov",
+      "age": 24
+    },
+    {
+      "team": "Getafe",
+      "player": "Francho Serrano",
+      "age": 25
+    },
+    {
+      "team": "Getafe",
+      "player": "Juanmi",
+      "age": 33
+    },
+    {
+      "team": "Getafe",
+      "player": "Jiří Letáček",
+      "age": 27
+    },
+    {
+      "team": "Getafe",
+      "player": "Davinchi",
+      "age": 19
+    },
+    {
+      "team": "Getafe",
+      "player": "Jean Ives Valou",
+      "age": 20
+    },
+    {
+      "team": "Levante",
+      "player": "Mathew Ryan",
+      "age": 34
+    },
+    {
+      "team": "Levante",
+      "player": "Aïssa Mandi",
+      "age": 35
+    },
+    {
+      "team": "Levante",
+      "player": "Manu Sánchez",
+      "age": 26
+    },
+    {
+      "team": "Levante",
+      "player": "Iván Romero",
+      "age": 25
+    },
+    {
+      "team": "Levante",
+      "player": "Karl Etta Eyong",
+      "age": 23
+    },
+    {
+      "team": "Levante",
+      "player": "Hugo Sotelo",
+      "age": 22
+    },
+    {
+      "team": "Levante",
+      "player": "Jeremy Toljan",
+      "age": 32
+    },
+    {
+      "team": "Levante",
+      "player": "Dela",
+      "age": 27
+    },
+    {
+      "team": "Levante",
+      "player": "Olasagasti",
+      "age": 26
+    },
+    {
+      "team": "Levante",
+      "player": "Brugui",
+      "age": 29
+    },
+    {
+      "team": "Levante",
+      "player": "Thiago Fernández",
+      "age": 22
+    },
+    {
+      "team": "Levante",
+      "player": "Oriol Rey",
+      "age": 28
+    },
+    {
+      "team": "Levante",
+      "player": "Enzo Bardeli",
+      "age": 25
+    },
+    {
+      "team": "Levante",
+      "player": "Víctor García",
+      "age": 29
+    },
+    {
+      "team": "Levante",
+      "player": "Dani Requena",
+      "age": 22
+    },
+    {
+      "team": "Levante",
+      "player": "Pablo Campos",
+      "age": 24
+    },
+    {
+      "team": "Levante",
+      "player": "Paco Cortés",
+      "age": 19
+    },
+    {
+      "team": "Levante",
+      "player": "Nacho Pérez",
+      "age": 18
+    },
+    {
+      "team": "Levante",
+      "player": "Cabello",
+      "age": 22
+    },
+    {
+      "team": "Levante",
+      "player": "Ifeanyi Ndukwe",
+      "age": 18
+    },
+    {
+      "team": "Málaga",
+      "player": "Pablo Martínez",
+      "age": 28
+    },
+    {
+      "team": "Málaga",
+      "player": "Chupe",
+      "age": 22
+    },
+    {
+      "team": "Málaga",
+      "player": "Alfonso Herrero",
+      "age": 32
+    },
+    {
+      "team": "Málaga",
+      "player": "Larrubia",
+      "age": 24
+    },
+    {
+      "team": "Málaga",
+      "player": "Calero",
+      "age": 31
+    },
+    {
+      "team": "Málaga",
+      "player": "Dani Lorenzo",
+      "age": 23
+    },
+    {
+      "team": "Málaga",
+      "player": "Adrián Niño",
+      "age": 22
+    },
+    {
+      "team": "Málaga",
+      "player": "Murillo",
+      "age": 25
+    },
+    {
+      "team": "Málaga",
+      "player": "Puga",
+      "age": 25
+    },
+    {
+      "team": "Málaga",
+      "player": "Joaquín Muñoz",
+      "age": 27
+    },
+    {
+      "team": "Málaga",
+      "player": "Izan Merino",
+      "age": 20
+    },
+    {
+      "team": "Málaga",
+      "player": "Dotor",
+      "age": 25
+    },
+    {
+      "team": "Málaga",
+      "player": "Juan Cruz",
+      "age": 26
+    },
+    {
+      "team": "Málaga",
+      "player": "Einar Galilea",
+      "age": 32
+    },
+    {
+      "team": "Málaga",
+      "player": "Rafa Rodríguez",
+      "age": 23
+    },
+    {
+      "team": "Málaga",
+      "player": "Rafita",
+      "age": 21
+    },
+    {
+      "team": "Málaga",
+      "player": "Jauregi",
+      "age": 30
+    },
+    {
+      "team": "Málaga",
+      "player": "Álex Pastor",
+      "age": 27
+    },
+    {
+      "team": "Málaga",
+      "player": "Aarón Ochoa",
+      "age": 19
+    },
+    {
+      "team": "Málaga",
+      "player": "Lobete",
+      "age": 26
+    },
+    {
+      "team": "Málaga",
+      "player": "Ramón Enríquez",
+      "age": 25
+    },
+    {
+      "team": "Málaga",
+      "player": "Ángel Recio",
+      "age": 23
+    },
+    {
+      "team": "Málaga",
+      "player": "Haitam Abaida",
+      "age": 24
+    },
+    {
+      "team": "Málaga",
+      "player": "Carlos López",
+      "age": 21
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Sergio Canales",
+      "age": 35
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Iván Martín",
+      "age": 27
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Iñigo Vicente",
+      "age": 28
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Andrés Martín",
+      "age": 27
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Agirrezabala",
+      "age": 25
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Villalibre",
+      "age": 29
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Jorge Salinas",
+      "age": 19
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Mantilla",
+      "age": 26
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Arana",
+      "age": 26
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Pedro Felipe",
+      "age": 22
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Simon Eriksson",
+      "age": 20
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Giorgi Guliashvili",
+      "age": 25
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Maguette Gueye",
+      "age": 23
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Pablo Ramón",
+      "age": 25
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Manu Hernando",
+      "age": 28
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Facundo González",
+      "age": 23
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Íñigo Sainz-Maza",
+      "age": 28
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Yassir Zabiri",
+      "age": 21
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "De Frutos",
+      "age": 29
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Álvaro García",
+      "age": 33
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Andrei Rațiu",
+      "age": 28
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Isi",
+      "age": 31
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Augusto Batalla",
+      "age": 30
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Florian Lejeune",
+      "age": 35
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Pathé Ciss",
+      "age": 32
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Óscar Valentín",
+      "age": 32
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Unai López",
+      "age": 30
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Pedro Díaz",
+      "age": 28
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Luiz Felipe",
+      "age": 29
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Marash Kumbulla",
+      "age": 26
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Iván Balliu",
+      "age": 34
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Dani Cárdenas",
+      "age": 29
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Sergio Camello",
+      "age": 25
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Alemão",
+      "age": 28
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Fran Pérez",
+      "age": 24
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Giorgi Tsitaishvili",
+      "age": 25
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Raúl De Tomás",
+      "age": 32
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Randy Nteka",
+      "age": 28
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Jozhua Vertrouwd",
+      "age": 22
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Pelayo Fernández",
+      "age": 23
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Etienne Eto'o",
+      "age": 25
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Pierre-Emerick Aubameyang",
+      "age": 37
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Angeliño",
+      "age": 29
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Leo Román",
+      "age": 26
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Yeremay",
+      "age": 23
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Mario Soriano",
+      "age": 24
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Álvaro Ferllo",
+      "age": 28
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Luismi Cruz",
+      "age": 25
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Villares",
+      "age": 30
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Lorenzo Amatucci",
+      "age": 22
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Giacomo Quagliata",
+      "age": 26
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Loureiro",
+      "age": 29
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Mella",
+      "age": 21
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Lucas Noubi",
+      "age": 21
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Ximo Navarro",
+      "age": 36
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Riki",
+      "age": 29
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Zakaria Eddahchouri",
+      "age": 26
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Dani Barcia",
+      "age": 23
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Jonathan Asp-Jensen",
+      "age": 20
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "José Ángel",
+      "age": 29
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Bil Nsongo",
+      "age": 22
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Germán Parreño",
+      "age": 33
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Arnau Comas",
+      "age": 26
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Charlie Patiño",
+      "age": 23
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Bright Ede",
+      "age": 19
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Jairo Noriega",
+      "age": 23
+    },
+    {
+      "team": "Espanyol",
+      "player": "Marko Dmitrović",
+      "age": 34
+    },
+    {
+      "team": "Espanyol",
+      "player": "Edu Expósito",
+      "age": 30
+    },
+    {
+      "team": "Espanyol",
+      "player": "Puado",
+      "age": 28
+    },
+    {
+      "team": "Espanyol",
+      "player": "Urko González",
+      "age": 25
+    },
+    {
+      "team": "Espanyol",
+      "player": "Leandro Cabrera",
+      "age": 35
+    },
+    {
+      "team": "Espanyol",
+      "player": "Quilindschy Hartman",
+      "age": 24
+    },
+    {
+      "team": "Espanyol",
+      "player": "Pere Milla",
+      "age": 34
+    },
+    {
+      "team": "Espanyol",
+      "player": "Pol Lozano",
+      "age": 27
+    },
+    {
+      "team": "Espanyol",
+      "player": "Omar El Hilali",
+      "age": 23
+    },
+    {
+      "team": "Espanyol",
+      "player": "Kike García",
+      "age": 36
+    },
+    {
+      "team": "Espanyol",
+      "player": "Unai Núñez",
+      "age": 29
+    },
+    {
+      "team": "Espanyol",
+      "player": "Roberto Fernández",
+      "age": 24
+    },
+    {
+      "team": "Espanyol",
+      "player": "Tyrhys Dolan",
+      "age": 24
+    },
+    {
+      "team": "Espanyol",
+      "player": "Jofre",
+      "age": 25
+    },
+    {
+      "team": "Espanyol",
+      "player": "Javi Hernández",
+      "age": 22
+    },
+    {
+      "team": "Espanyol",
+      "player": "Gabriel Moscardo",
+      "age": 21
+    },
+    {
+      "team": "Espanyol",
+      "player": "Marcos Fernández",
+      "age": 23
+    },
+    {
+      "team": "Espanyol",
+      "player": "Rubén Sánchez",
+      "age": 25
+    },
+    {
+      "team": "Espanyol",
+      "player": "Vanja Drkušić",
+      "age": 26
+    },
+    {
+      "team": "Espanyol",
+      "player": "Clemens Riedel",
+      "age": 23
+    },
+    {
+      "team": "Espanyol",
+      "player": "Rafa Bauza",
+      "age": 21
+    },
+    {
+      "team": "Espanyol",
+      "player": "Roger Hinojo",
+      "age": 21
+    },
+    {
+      "team": "Espanyol",
+      "player": "Fortuño",
+      "age": 25
+    },
+    {
+      "team": "Real Betis",
+      "player": "Isco",
+      "age": 34
+    },
+    {
+      "team": "Real Betis",
+      "player": "Fornals",
+      "age": 30
+    },
+    {
+      "team": "Real Betis",
+      "player": "Antony",
+      "age": 26
+    },
+    {
+      "team": "Real Betis",
+      "player": "Abde",
+      "age": 24
+    },
+    {
+      "team": "Real Betis",
+      "player": "Giovani Lo Celso",
+      "age": 30
+    },
+    {
+      "team": "Real Betis",
+      "player": "Cucho Hernández",
+      "age": 27
+    },
+    {
+      "team": "Real Betis",
+      "player": "Bartra",
+      "age": 35
+    },
+    {
+      "team": "Real Betis",
+      "player": "Diego Llorente",
+      "age": 33
+    },
+    {
+      "team": "Real Betis",
+      "player": "Natan",
+      "age": 25
+    },
+    {
+      "team": "Real Betis",
+      "player": "Marc Roca",
+      "age": 29
+    },
+    {
+      "team": "Real Betis",
+      "player": "Troy Parrott",
+      "age": 24
+    },
+    {
+      "team": "Real Betis",
+      "player": "Aitor Ruibal",
+      "age": 30
+    },
+    {
+      "team": "Real Betis",
+      "player": "Álvaro Valles",
+      "age": 29
+    },
+    {
+      "team": "Real Betis",
+      "player": "Fran García",
+      "age": 27
+    },
+    {
+      "team": "Real Betis",
+      "player": "Fidalgo",
+      "age": 29
+    },
+    {
+      "team": "Real Betis",
+      "player": "Héctor Bellerín",
+      "age": 31
+    },
+    {
+      "team": "Real Betis",
+      "player": "Diego Conde",
+      "age": 27
+    },
+    {
+      "team": "Real Betis",
+      "player": "Riquelme",
+      "age": 26
+    },
+    {
+      "team": "Real Betis",
+      "player": "Valentín Gómez",
+      "age": 23
+    },
+    {
+      "team": "Real Betis",
+      "player": "Nelson Deossa",
+      "age": 26
+    },
+    {
+      "team": "Real Betis",
+      "player": "Junior Firpo",
+      "age": 30
+    },
+    {
+      "team": "Real Betis",
+      "player": "Facundo Bernal",
+      "age": 23
+    },
+    {
+      "team": "Real Betis",
+      "player": "Iker Losada",
+      "age": 25
+    },
+    {
+      "team": "Real Betis",
+      "player": "Pablo García",
+      "age": 20
+    },
+    {
+      "team": "Real Betis",
+      "player": "Ángel Ortiz",
+      "age": 22
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Oyarzabal",
+      "age": 29
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Álex Remiro",
+      "age": 31
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Takefusa Kubo",
+      "age": 25
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Guedes",
+      "age": 29
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Carlos Soler",
+      "age": 29
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Barrenetxea",
+      "age": 24
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Yangel Herrera",
+      "age": 28
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Sergio Gómez",
+      "age": 26
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Gorrotxa",
+      "age": 24
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Jon Martín",
+      "age": 20
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Zubeldia",
+      "age": 29
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Jon Mikel Aramburu",
+      "age": 24
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Luka Sučić",
+      "age": 24
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Turrientes",
+      "age": 24
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Unai Marrero",
+      "age": 25
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Orri Óskarsson",
+      "age": 22
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Pacheco",
+      "age": 25
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Pablo Marín",
+      "age": 23
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Aihen Muñoz",
+      "age": 29
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Odriozola",
+      "age": 30
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Arsen Zakharyan",
+      "age": 23
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Job Nguono Ochieng",
+      "age": 23
+    },
+    {
+      "team": "Sevilla",
+      "player": "Odysseas Vlachodimos",
+      "age": 32
+    },
+    {
+      "team": "Sevilla",
+      "player": "Rubén Vargas",
+      "age": 28
+    },
+    {
+      "team": "Sevilla",
+      "player": "Carmona",
+      "age": 24
+    },
+    {
+      "team": "Sevilla",
+      "player": "Lucien Agoumé",
+      "age": 24
+    },
+    {
+      "team": "Sevilla",
+      "player": "Chidera Ejuke",
+      "age": 28
+    },
+    {
+      "team": "Sevilla",
+      "player": "Juan Iglesias",
+      "age": 28
+    },
+    {
+      "team": "Sevilla",
+      "player": "Kike Salas",
+      "age": 24
+    },
+    {
+      "team": "Sevilla",
+      "player": "Alfon",
+      "age": 27
+    },
+    {
+      "team": "Sevilla",
+      "player": "Giorgi Kochorashvili",
+      "age": 27
+    },
+    {
+      "team": "Sevilla",
+      "player": "Adrià Pedrosa",
+      "age": 28
+    },
+    {
+      "team": "Sevilla",
+      "player": "Gabriel Suazo",
+      "age": 29
+    },
+    {
+      "team": "Sevilla",
+      "player": "Isaac Romero",
+      "age": 26
+    },
+    {
+      "team": "Sevilla",
+      "player": "Peque",
+      "age": 24
+    },
+    {
+      "team": "Sevilla",
+      "player": "Arouna Sangante",
+      "age": 24
+    },
+    {
+      "team": "Sevilla",
+      "player": "Guridi",
+      "age": 31
+    },
+    {
+      "team": "Sevilla",
+      "player": "Marcão",
+      "age": 30
+    },
+    {
+      "team": "Sevilla",
+      "player": "Andrés Castrín",
+      "age": 23
+    },
+    {
+      "team": "Sevilla",
+      "player": "Fábio Cardoso",
+      "age": 32
+    },
+    {
+      "team": "Sevilla",
+      "player": "Robbie Ure",
+      "age": 22
+    },
+    {
+      "team": "Sevilla",
+      "player": "Julio Díaz",
+      "age": 21
+    },
+    {
+      "team": "Sevilla",
+      "player": "Manu Bueno",
+      "age": 22
+    },
+    {
+      "team": "Sevilla",
+      "player": "Miguel Sierra",
+      "age": 22
+    },
+    {
+      "team": "Sevilla",
+      "player": "Fran González",
+      "age": 21
+    },
+    {
+      "team": "Sevilla",
+      "player": "Nico Guillén",
+      "age": 18
+    },
+    {
+      "team": "Valencia",
+      "player": "Guido Rodríguez",
+      "age": 32
+    },
+    {
+      "team": "Valencia",
+      "player": "Javi Guerra",
+      "age": 23
+    },
+    {
+      "team": "Valencia",
+      "player": "Gayà",
+      "age": 31
+    },
+    {
+      "team": "Valencia",
+      "player": "Maffeo",
+      "age": 29
+    },
+    {
+      "team": "Valencia",
+      "player": "Hugo Duro",
+      "age": 26
+    },
+    {
+      "team": "Valencia",
+      "player": "Luis Rioja",
+      "age": 33
+    },
+    {
+      "team": "Valencia",
+      "player": "Stole Dimitrievski",
+      "age": 32
+    },
+    {
+      "team": "Valencia",
+      "player": "Diego López",
+      "age": 24
+    },
+    {
+      "team": "Valencia",
+      "player": "Pepelu",
+      "age": 28
+    },
+    {
+      "team": "Valencia",
+      "player": "Umar Sadiq",
+      "age": 29
+    },
+    {
+      "team": "Valencia",
+      "player": "Mouctar Diakhaby",
+      "age": 29
+    },
+    {
+      "team": "Valencia",
+      "player": "Justin de Haas",
+      "age": 26
+    },
+    {
+      "team": "Valencia",
+      "player": "Filip Ugrinić",
+      "age": 27
+    },
+    {
+      "team": "Valencia",
+      "player": "Arnaut Danjuma",
+      "age": 29
+    },
+    {
+      "team": "Valencia",
+      "player": "César Tárrega",
+      "age": 24
+    },
+    {
+      "team": "Valencia",
+      "player": "André Almeida",
+      "age": 26
+    },
+    {
+      "team": "Valencia",
+      "player": "Dani Raba",
+      "age": 30
+    },
+    {
+      "team": "Valencia",
+      "player": "Copete",
+      "age": 27
+    },
+    {
+      "team": "Valencia",
+      "player": "Aliou Dieng",
+      "age": 29
+    },
+    {
+      "team": "Valencia",
+      "player": "Dimitri Foulquier",
+      "age": 33
+    },
+    {
+      "team": "Valencia",
+      "player": "Jesús Vázquez",
+      "age": 23
+    },
+    {
+      "team": "Valencia",
+      "player": "Ryunosuke Sato",
+      "age": 20
+    },
+    {
+      "team": "Valencia",
+      "player": "Sergi Canós",
+      "age": 29
+    },
+    {
+      "team": "Valencia",
+      "player": "Cristian Rivero",
+      "age": 28
+    },
+    {
+      "team": "Valencia",
+      "player": "Iker Córdoba",
+      "age": 20
+    },
+    {
+      "team": "Valencia",
+      "player": "David Otorbi",
+      "age": 19
+    },
+    {
+      "team": "Villarreal",
+      "player": "Péter Gulácsi",
+      "age": 36
+    },
+    {
+      "team": "Villarreal",
+      "player": "Moleiro",
+      "age": 23
+    },
+    {
+      "team": "Villarreal",
+      "player": "Gerard Moreno",
+      "age": 34
+    },
+    {
+      "team": "Villarreal",
+      "player": "Nicolas Pépé",
+      "age": 31
+    },
+    {
+      "team": "Villarreal",
+      "player": "Carlos Romero",
+      "age": 24
+    },
+    {
+      "team": "Villarreal",
+      "player": "Pape Gueye",
+      "age": 27
+    },
+    {
+      "team": "Villarreal",
+      "player": "Ayoze",
+      "age": 33
+    },
+    {
+      "team": "Villarreal",
+      "player": "Sergi Cardona",
+      "age": 27
+    },
+    {
+      "team": "Villarreal",
+      "player": "Santi Comesaña",
+      "age": 30
+    },
+    {
+      "team": "Villarreal",
+      "player": "Georges Mikautadze",
+      "age": 25
+    },
+    {
+      "team": "Villarreal",
+      "player": "Juan Foyth",
+      "age": 28
+    },
+    {
+      "team": "Villarreal",
+      "player": "Renato Veiga",
+      "age": 23
+    },
+    {
+      "team": "Villarreal",
+      "player": "Santiago Mouriño",
+      "age": 24
+    },
+    {
+      "team": "Villarreal",
+      "player": "Luiz Júnior",
+      "age": 25
+    },
+    {
+      "team": "Villarreal",
+      "player": "Tajon Buchanan",
+      "age": 27
+    },
+    {
+      "team": "Villarreal",
+      "player": "Logan Costa",
+      "age": 25
+    },
+    {
+      "team": "Villarreal",
+      "player": "Ilias Akhomach",
+      "age": 22
+    },
+    {
+      "team": "Villarreal",
+      "player": "Pau Navarro",
+      "age": 21
+    },
+    {
+      "team": "Villarreal",
+      "player": "Alex Freeman",
+      "age": 22
+    },
+    {
+      "team": "Villarreal",
+      "player": "Tani Oluwaseyi",
+      "age": 26
+    },
+    {
+      "team": "Villarreal",
+      "player": "Carlos Macià",
+      "age": 18
+    },
+    {
+      "team": "Villarreal",
+      "player": "Rubén Gómez",
+      "age": 24
+    },
+    {
+      "team": "Villarreal",
+      "player": "Alassane Diatta",
+      "age": 21
+    }
+  ],
+  "portraits": [
+    {
+      "team": "Barcelona",
+      "player": "Yamal",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/937958-1773173768.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Rodri",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/357565-1788247677.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Pedri",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/683840-1744278342.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Raphinha",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/411295-1729754479.png?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Cubarsí",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/962110-1712779232.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Joan García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/561613-1747386081.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "De Jong",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/326330-1746041680.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Fermín López",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/636703-1698086824.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Eric García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/466794-1788248040.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Koundé",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/411975-1702502639.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Olmo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/293385-1780663091.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "João Cancelo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/182712-1675080937.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Gavi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/646740-1682685701.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Anthony Gordon",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/503733-1761080304.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Balde",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/636688-1662836200.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Karim Adeyemi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/496094-1788248133.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Szczęsny",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/44058-1744278078.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Gerard Martín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/705395-1730119053.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Andreas Christensen",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/196948-1668183241.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Marc Bernal",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1018920-1724052540.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Roony Bardghji",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/792331-1667420074.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Xavi Espart",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1018912-1768246502.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Jesse Bisiwu",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1105549-1788247960.jpg?lm=4711"
+    },
+    {
+      "team": "Barcelona",
+      "player": "Hamza Abdelkarim",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1259085-1780899447.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Mbappé",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/342229-1789750273.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Courtois",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/108390-1717280733.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Bellingham",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/581678-1748102891.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Vini Jr",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/371998-1792009724.png?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Valverde",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/369081-1731018042.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Cucurella",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/284857-1765185117.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Trent Alexander-Arnold",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/314353-1701680958.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Tchouaméni",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/413112-1668500754.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Yan Diomande",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1390649-1759779499.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Militão",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/401530-1719653438.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Bernardo Silva",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/241641-1684311533.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Rodrygo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/412363-1763041611.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Konaté",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/357119-1669190550.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Dumfries",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/321528-1746042223.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Rüdiger",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/86202-1684484602.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Arda Güler",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/861410-1791212860.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Camavinga",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/640428-1668500874.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Carreras",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/811778-1737497415.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Huijsen",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/890290-1750251451.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Brahim Díaz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/314678-1744193327.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Mendy",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/291417-1701294025.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Lunin",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/404839-1701294131.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Endrick",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/971570-1782847902.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Asencio",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/935245-1731168094.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Carlos Espí",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1063338-1759409131.jpg?lm=4711"
+    },
+    {
+      "team": "Real Madrid",
+      "player": "Thiago Pitarch",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1375227-1755633821.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Oblak",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/121483-1719350076.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Julián Álvarez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/576024-1684920938.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Marcos Llorente",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/282411-1773182531.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Grimaldo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/193082-1689710805.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Hjulmand",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/461496-1725633200.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Pablo Barrios",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/775605-1699431384.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Hancko",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/404418-1722415670.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Baena",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/548111-1761821030.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Lookman",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/406040-1769763751.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Sørloth",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/238407-1716403969.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Giuliano Simeone",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/742201-1741120599.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Musso",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/242359-1663583047.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Cristian Romero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/355915-1665609429.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Pubill",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/844637-1779789749.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Koke",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/74229-1664970397.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Le Normand",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/351809-1707948228.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Johnny Cardoso",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/689505-1742036970.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Lee Kang In",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/557149-1703978046.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Obed Vargas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/889435-1740863407.jpg?lm=4711"
+    },
+    {
+      "team": "Atlético de Madrid",
+      "player": "Arnau Ortiz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/802046-1721153036.jpg?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Unai Simón",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/262396-1709674901.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Nico Williams",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/709187-1709676169.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Aymeric Laporte",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/176553-1685546335.jpg?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Sancet",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/571020-1709676037.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Vivian",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/524000-1709674998.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Iñaki Williams",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/255508-1709676323.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Yeray",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/255488-1709675129.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Jauregizar",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/938729-1709675994.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Yuri Berchiche",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/61812-1709675167.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Berenguer",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/338425-1709676212.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Ruiz de Galarreta",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/126751-1709675810.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Guruzeta",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/340205-1709676375.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Aitor Paredes",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/591916-1709675052.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Beñat Prados",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/625047-1709675858.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Areso",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/488626-1675800186.jpg?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Robert Navarro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/563137-1567246327.jpg?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Hugo Rincón",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/834487-1709677097.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Álvaro Djaló",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/671649-1762259842.jpg?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Peio Canales",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1056966-1709678026.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Rego",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/834491-1709677367.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Maroan",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1054934-1736857054.jpg?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Nico Serrano",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/668183-1731352737.png?lm=4711"
+    },
+    {
+      "team": "Athletic Club",
+      "player": "Álex Padilla",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/834483-1709676711.png?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Ante Budimir",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/46413-1732219707.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Sergio Herrera",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/248738-1732220099.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Enzo Boyomo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/541555-1728038860.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Valentin Rosier",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/441170-1666619891.png?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Moncayola",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/552425-1583310847.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Aitor Fernández",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/118997-1683281584.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Rubén García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/213260-1583310204.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Catena",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/449796-1732220159.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Abel Bretones",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/658115-1690301272.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Aimar Oroz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/634131-1732220023.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Diego Rico",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/249513-1697221474.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Moi Gómez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/175449-1664970613.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Lucas Torró",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/213670-1732219931.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Raúl García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/631002-1614090749.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Raúl Moro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/624942-1750837010.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Dubasin",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/628621-1760543752.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Herrando",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/555500-1732219992.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Iker Muñoz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/710677-1697557434.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Kike Barja",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/298575-1583310743.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Osambela",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1038512-1700857716.png?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Rockson Yeboah",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1149188-1783519538.jpg?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Arguibide",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1065442-1700857321.png?lm=4711"
+    },
+    {
+      "team": "Osasuna",
+      "player": "Mauro Echegoyen",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1065440-1700858200.png?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Iago Aspas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/72047-1758827533.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Borja Iglesias",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/278359-1686661509.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Aleix Febas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/217144-1448531418.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Marcos Alonso",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/112515-1694505734.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Ilaix Moriba",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/617074-1758827372.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Ionuț Andrei Radu",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/303657-1699432718.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Carl Starfelt",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/258987-1758827268.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Javi Galán",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/448628-1706112804.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Javi Rueda",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/652331-1773949798.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Williot Swedberg",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/764859-1765193019.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Álvaro Núñez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/626953-1752919393.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Carreira",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/545647-1773950983.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Javi Rodríguez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1076815-1732611843.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Hugo Álvarez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/892929-1715867247.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Altay Bayındır",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/336077-1699471821.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Ferran Jutglà",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/599231-1666292299.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Miguel Román",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/892932-1769759183.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Pablo Durán",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/905997-1761577329.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Iván Villar",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/297194-1516876837.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Jones El-Abdellaoui",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/960571-1720825911.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Abdoulaye Faye",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1182738-1695367426.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Yoel Lago",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/939374-1758827211.jpg?lm=4711"
+    },
+    {
+      "team": "Celta de Vigo",
+      "player": "Hugo González",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/707279-1698962824.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Valera",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/548188-1588605205.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Matías Dituro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/144128-1695219400.png?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Bigas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/203043-1447321397.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Marc Aguado",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/531404-1709050897.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Víctor Chust",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/495625-1725990797.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Facundo Buonanotte",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/983989-1682588141.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Martim Neto",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/549027-1737124895.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Josan",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/277533-1601023578.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Gonzalo Villar",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/398163-1611584180.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Ezequiel Ponce",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/296783-1771689308.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Fer Niño",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/627294-1712140796.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Lucas Cepeda",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/912392-1707516783.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Tete Morente",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/339816-1730123532.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Federico Redondo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/909758-1740775355.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Grady Diangana",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/342048-1723555515.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Yago Santiago",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/706947-1705304254.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Buba Sangaré",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/962125-1739283835.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Abiel Osorio",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/991773-1770650623.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Matia Barzić",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1060456-1761232760.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Bambo Diaby",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/435493-1723551440.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Iturbe",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/618801-1731931020.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Ali Houary",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Elche",
+      "player": "Adam Boayar",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "David Soria",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/226012-1696863038.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Martín Satriano",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/640109-1626685122.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Dakonam Djené",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/221150-1669364811.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Zaid Romero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/741142-1753180256.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Johan Mojica",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/262939-1541161893.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Borja Mayoral",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/298976-1669365430.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Christantus Uche",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1124005-1748855413.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Orel Mangala",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/289592-1657181518.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Enes Ünal",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/251106-1669365680.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Mario Martín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/948273-1707861820.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Terrats",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/783396-1726231968.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Sebastián Boselli",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/898352-1739826537.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Kiko Femenía",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/76467-1726231817.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Andrés García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1063329-1698880585.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Saba Sazonov",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/655456-1695386095.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Francho Serrano",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/632930-1732368027.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Juanmi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/126737-1653043231.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Jiří Letáček",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/339079-1714922207.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Davinchi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1268764-1732577167.jpg?lm=4711"
+    },
+    {
+      "team": "Getafe",
+      "player": "Jean Ives Valou",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Pablo Martínez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/568835-1632129599.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Chupe",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/780817-1773830581.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Alfonso Herrero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/129478-1725618323.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Larrubia",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/635939-1725885924.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Calero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/357884-1447238696.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Dani Lorenzo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/960562-1725885634.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Salinas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/819590-1744371555.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Adrián Niño",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/926849-1731933033.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Murillo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/635930-1725883727.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Puga",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/776703-1725885464.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Joaquín Muñoz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/396334-1710417120.png?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Izan Merino",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1078436-1725885589.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Dotor",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/623524-1739477790.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Juan Cruz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/585700-1667290065.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Einar Galilea",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/251046-1646598982.png?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Rafa Rodríguez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1057394-1762764856.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Rafita",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1064717-1781548686.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Jauregi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/376589-1725617508.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Álex Pastor",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/398056-1543829456.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Aarón Ochoa",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1109577-1725885829.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Lobete",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/625654-1633347659.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Ramón Enríquez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/567222-1591178705.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Ángel Recio",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Haitam Abaida",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/667996-1725886034.jpg?lm=4711"
+    },
+    {
+      "team": "Málaga",
+      "player": "Carlos López",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1004298-1725883415.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Sergio Canales",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/66106-1653039158.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Iván Martín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/341278-1703177977.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Iñigo Vicente",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/335216-1711381338.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Andrés Martín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/531277-1744710284.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Agirrezabala",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/625014-1709674945.png?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Villalibre",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/251897-1709676417.png?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Jorge Salinas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1262996-1783511110.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Mantilla",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/636116-1652953291.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Arana",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/461631-1767022242.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Pedro Felipe",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1082581-1670983210.jpeg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Simon Eriksson",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1088712-1757615371.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Giorgi Guliashvili",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/502682-1759082949.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Maguette Gueye",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/933795-1779005844.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Pablo Ramón",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/629511-1712568179.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Manu Hernando",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/396161-1724514640.jpeg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Facundo González",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/825199-1729850176.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Íñigo Sainz-Maza",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/522730-1652944518.jpg?lm=4711"
+    },
+    {
+      "team": "Racing de Santander",
+      "player": "Yassir Zabiri",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1153105-1759431831.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "De Frutos",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/455181-1756820871.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Álvaro García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/257062-1762775114.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Andrei Rațiu",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/527966-1765462531.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Isi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/362086-1726662958.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Augusto Batalla",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/275218-1775761484.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Florian Lejeune",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/127108-1496825998.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Pathé Ciss",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/525578-1775761248.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Óscar Valentín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/517753-1765909833.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Unai López",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/192009-1726662500.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Pedro Díaz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/363057-1664207844.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Luiz Felipe",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/457931-1595857216.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Marash Kumbulla",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/371371-1716969202.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Iván Balliu",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/85295-1688119678.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Dani Cárdenas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/397676-1663571879.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Sergio Camello",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/505674-1775761676.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Alemão",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/560417-1775761327.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Fran Pérez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/622988-1683212780.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Giorgi Tsitaishvili",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/419067-1742510704.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Raúl De Tomás",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/162038-1761864724.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Randy Nteka",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/560483-1600680162.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Jozhua Vertrouwd",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/765467-1691072211.jpg?lm=4711"
+    },
+    {
+      "team": "Rayo Vallecano",
+      "player": "Pelayo Fernández",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Pierre-Emerick Aubameyang",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/58864-1762262625.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Angeliño",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/277179-1706626191.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Leo Román",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/562742-1745395600.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Yeremay",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/636385-1762939146.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Mario Soriano",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/568148-1724424505.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Álvaro Ferllo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/453704-1694431085.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Luismi Cruz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/610461-1647594517.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Villares",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/590687-1702404812.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Lorenzo Amatucci",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/707450-1751270499.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Giacomo Quagliata",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/458777-1658899170.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Loureiro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/400104-1694422710.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Mella",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/741256-1733934484.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Lucas Noubi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/743379-1663871275.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Ximo Navarro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/184767-1647530854.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Riki",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/596899-1745337795.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Zakaria Eddahchouri",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/519651-1599332479.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Dani Barcia",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/857949-1702404739.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Jonathan Asp-Jensen",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/856274-1739807845.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "José Ángel",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/277179-1706626191.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Bil Nsongo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1299392-1779655212.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Germán Parreño",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/126746-1447228190.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Arnau Comas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/388542-1588012945.jpg?lm=4711"
+    },
+    {
+      "team": "Deportivo de La Coruña",
+      "player": "Bright Ede",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1177033-1752826490.JPG?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Marko Dmitrović",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/94308-1669364494.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Edu Expósito",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/506248-1747385472.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Puado",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/408471-1698158226.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Urko González",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/625651-1694171507.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Leandro Cabrera",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/102423-1747343579.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Quilindschy Hartman",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/514285-1723820103.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Pere Milla",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/225593-1541151194.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Pol Lozano",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/412045-1568028635.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Omar El Hilali",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/822331-1683211692.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Kike García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/93936-1490620015.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Unai Núñez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/338285-1753679771.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Roberto Fernández",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/720518-1732827310.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Tyrhys Dolan",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/647435-1679678061.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Jofre",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/628498-1747385604.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Javi Hernández",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/946279-1725656260.png?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Gabriel Moscardo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1086636-1724752763.png?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Marcos Fernández",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/961948-1782514405.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Vanja Drkušić",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/371856-1784994497.png?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Clemens Riedel",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/692070-1752059844.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Rafa Bauza",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Roger Hinojo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1204959-1761231615.jpg?lm=4711"
+    },
+    {
+      "team": "Espanyol",
+      "player": "Fortuño",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/628487-1747339466.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Isco",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/85288-1744375744.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Fornals",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/357885-1773344365.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Antony",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/602105-1758783018.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Abde",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/724520-1758782814.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Giovani Lo Celso",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/348795-1726734706.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Cucho Hernández",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/459463-1773344529.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Bartra",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/99922-1724053472.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Diego Llorente",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/246291-1675246130.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Natan",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/735568-1708553167.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Marc Roca",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/336869-1773344159.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Troy Parrott",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/552655-1721657549.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Aitor Ruibal",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/378139-1773344244.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Álvaro Valles",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/417913-1773343747.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Fran García",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/341264-1688119965.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Fidalgo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/261503-1773343851.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Héctor Bellerín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/191217-1773344002.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Diego Conde",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/341713-1669364743.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Riquelme",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/461617-1701212385.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Valentín Gómez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/985383-1758783099.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Nelson Deossa",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/907559-1693600752.JPG?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Junior Firpo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/374139-1724939835.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Facundo Bernal",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/898350-1788962862.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Iker Losada",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/632741-1569337955.jpg?lm=4711"
+    },
+    {
+      "team": "Real Betis",
+      "player": "Ángel Ortiz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/933908-1758782759.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Oyarzabal",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/351478-1749415304.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Álex Remiro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/212862-1694594210.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Takefusa Kubo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/405398-1697110254.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Guedes",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/225122-1701334424.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Carlos Soler",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/372246-1759159072.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Barrenetxea",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/616369-1699472801.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Yangel Herrera",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/378293-1719230693.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Sergio Gómez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/366930-1727678534.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Gorrotxa",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/711374-1727113195.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Jon Martín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1018938-1780664220.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Zubeldia",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/355628-1664974849.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Luka Sučić",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/502722-1692998699.png?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Turrientes",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/634431-1702416501.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Unai Marrero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/625657-1692370133.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Orri Óskarsson",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/660438-1692090952.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Pacheco",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/580560-1631178086.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Pablo Marín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/907813-1683212131.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Aihen Muñoz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/517842-1699007158.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Odriozola",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/280730-1579598607.jpg?lm=4711"
+    },
+    {
+      "team": "Real Sociedad",
+      "player": "Arsen Zakharyan",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/555143-1683292149.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Odysseas Vlachodimos",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/124419-1706829687.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Rubén Vargas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/345886-1779793578.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Carmona",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/711625-1696862897.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Lucien Agoumé",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/569384-1656577561.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Chidera Ejuke",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/500067-1706264992.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Juan Iglesias",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/390688-1632295269.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Kike Salas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/766583-1736865960.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Alfon",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/357628-1734950388.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Giorgi Kochorashvili",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/405564-1759133137.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Gabriel Suazo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/385105-1752224979.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Isaac Romero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/687609-1762342231.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Peque",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/639733-1615192753.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Arouna Sangante",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/768380-1738244271.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Guridi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/289257-1604301765.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Marcão",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/439022-1681476532.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Andrés Castrín",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Fábio Cardoso",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/155025-1736318779.JPG?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Robbie Ure",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/783373-1696835614.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Julio Díaz",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/945753-1731932642.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Manu Bueno",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/766723-1702412015.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Miguel Sierra",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1064105-1791321419.png?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Fran González",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1055220-1704358404.jpg?lm=4711"
+    },
+    {
+      "team": "Sevilla",
+      "player": "Nico Guillén",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1236856-1771593050.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Guido Rodríguez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/342385-1668181269.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Javi Guerra",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/834764-1696188716.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Gayà",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/221322-1605193468.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Maffeo",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/251876-1784897141.png?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Hugo Duro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/573775-1683213249.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Luis Rioja",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/278837-1647530464.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Stole Dimitrievski",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/165467-1541150592.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Diego López",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/617081-1683211924.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Pepelu",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/328480-1713971066.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Umar Sadiq",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/337715-1728040426.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Mouctar Diakhaby",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/346289-1709636432.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Justin de Haas",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/420196-1605471356.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Filip Ugrinić",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/394236-1700817304.png?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Arnaut Danjuma",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/355861-1674657323.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "César Tárrega",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/707274-1698963222.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Dani Raba",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/413262-1743493611.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Copete",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/520840-1674915512.JPG?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Aliou Dieng",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/410427-1615125228.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Dimitri Foulquier",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/170472-1447230887.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Jesús Vázquez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/623024-1644238446.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Ryunosuke Sato",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/948169-1772965432.JPG?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Sergi Canós",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/251845-1538466933.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Cristian Rivero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/398131-1745337358.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "Iker Córdoba",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=4711"
+    },
+    {
+      "team": "Valencia",
+      "player": "David Otorbi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1009766-1724053276.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Péter Gulácsi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/57071-1719214600.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Moleiro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/733576-1737365948.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Gerard Moreno",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/177467-1726231623.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Nicolas Pépé",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/343052-1758059244.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Carlos Romero",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/709372-1747385379.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Pape Gueye",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/485963-1768814767.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Ayoze",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/246968-1716803546.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Sergi Cardona",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/678406-1788902293.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Santi Comesaña",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/380598-1726231263.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Georges Mikautadze",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/729814-1719222514.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Juan Foyth",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/480763-1662668281.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Renato Veiga",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/805714-1749414999.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Santiago Mouriño",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/953901-1788901706.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Luiz Júnior",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/712107-1758058969.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Tajon Buchanan",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/638793-1758059596.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Logan Costa",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/484988-1708555203.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Ilias Akhomach",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/709969-1788901978.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Pau Navarro",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1061336-1788901774.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Alex Freeman",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/985806-1740780278.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Tani Oluwaseyi",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/972465-1758059359.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Carlos Macià",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1453066-1788902035.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Rubén Gómez",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/709336-1788901859.jpg?lm=4711"
+    },
+    {
+      "team": "Villarreal",
+      "player": "Alassane Diatta",
+      "photo_url": "https://img.a.transfermarkt.technology/portrait/medium/1249340-1788902147.jpg?lm=4711"
+    }
+  ]
+}

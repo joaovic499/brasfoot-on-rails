@@ -9,11 +9,16 @@
   #dirty-tag { display:none; color:var(--acc); font-weight:700; }
   .btn.save { font-size:15px; padding:11px 20px; }
   td.calc { color:var(--mut); text-align:center; font-size:13px; white-space:nowrap; }
+  .player-cell { display:flex; align-items:center; gap:9px; min-width:150px; }
+  .player-photo,.player-photo-fallback { width:42px; height:48px; flex:0 0 auto; display:grid; place-items:center; overflow:hidden; border-radius:5px; background:#1b3023; border:1px solid rgba(255,255,255,.12); }
+  .player-photo { object-fit:cover; object-position:50% 22%; }
+  .player-photo-fallback { color:#c2eb65; font-size:11px; font-weight:900; }
+  .player-name-field { min-width:110px; }
 </style>
 
 <div class="card topbar">
   <div class="row" style="justify-content:space-between">
-    <h2 style="margin:0">Editor de jogadores</h2>
+    <h2 style="margin:0">Base de jogadores</h2>
     <div class="row">
       <span id="dirty-tag">● alterações não salvas</span>
       <%= form_with url: players_path, method: :get, data: { turbo: false } do %>
@@ -25,10 +30,11 @@
     </div>
   </div>
   <% if @locked %>
-    <p style="margin:10px 0 0;font-size:14px">🔒 <strong>Edição bloqueada durante a carreira.</strong>
-      <span class="mut">Os jogadores ficam congelados enquanto você joga o campeonato. Para editar de novo, use “Reiniciar carreira” no Painel (isso apaga a temporada atual).</span></p>
+    <p style="margin:10px 0 0;font-size:14px">🔒 <strong>Base protegida enquanto a carreira está aberta.</strong>
+      <span class="mut">Saia para o menu principal para editar os dados-base. O elenco da carreira salva permanece separado.</span></p>
   <% else %>
   <p class="mut" style="margin:10px 0 0;font-size:13px">
+    Alterações nesta base entram em novas carreiras e não modificam um save existente.
     <strong>Posição secundária</strong> (até 2): joga ali sem perder força; em qualquer outra posição perde força conforme a distância.
     <strong>Atributos</strong> (1 a 99): quem tem <em>finalização</em> alta faz gols, quem tem <em>passe</em>/condução/ritmo dá assistências, e <em>defesa</em>/<em>físico</em> alto leva mais cartões.
     Se você mudar os atributos e <u>não mexer na Força</u>, a Força é recalculada pelos atributos (coluna “Over atrib.” mostra o valor atual). Atributo em branco usa o perfil médio da posição (número cinza).
@@ -42,13 +48,15 @@
     <h2><%= @team.name %> — <%= @players.size %> jogadores</h2>
     <table>
       <tr>
-        <th>Nome</th><th class="n">Força</th><th>Posições</th>
+        <th>Nome</th><th class="n">Força</th><th class="n">Idade</th><th class="n">Stamina</th><th>Posições</th>
         <% Player::ATTRS.each do |a| %><th class="n" title="<%= Player::ATTR_LABELS[a] %>"><%= Player::ATTR_SHORT[a] %></th><% end %>
       </tr>
       <% @players.each do |pl| %>
         <tr>
           <td><%= pl.name %></td>
           <td class="n"><%= ovr_badge pl.overall %></td>
+          <td class="n"><%= pl.age || 25 %></td>
+          <td class="n"><%= pl.stamina || 80 %></td>
           <td><span class="pos"><%= pl.positions.join("/") %></span></td>
           <% if pl.position == "GK" %>
             <td colspan="<%= Player::ATTRS.size %>" class="mut" style="text-align:center">goleiro</td>
@@ -66,15 +74,27 @@
       <h2><%= @team.name %> — <%= @players.size %> jogadores</h2>
       <table class="ed">
         <tr>
-          <th>Nome</th><th>Força</th><th>Posição</th><th>Sec. 1</th><th>Sec. 2</th>
+          <th>Nome</th><th>Força</th><th>Idade</th><th>Stamina</th><th>Posição</th><th>Sec. 1</th><th>Sec. 2</th>
           <% Player::ATTRS.each do |a| %><th title="<%= Player::ATTR_LABELS[a] %>"><%= Player::ATTR_SHORT[a] %></th><% end %>
           <th>Over atrib.</th><th>Time</th>
         </tr>
         <% @players.each do |pl| %>
           <% k = "players[#{pl.id}]" %>
           <tr>
-            <td><%= text_field_tag "#{k}[name]", pl.name, class: "inp", id: "name_#{pl.id}" %></td>
+            <td>
+              <div class="player-cell">
+                <% if pl.photo_url.present? %>
+                  <%= image_tag pl.photo_url, alt: pl.name, class: "player-photo", loading: "lazy", referrerpolicy: "no-referrer" %>
+                <% else %>
+                  <span class="player-photo-fallback"><%= pl.name.split.map { |part| part[0] }.first(2).join.upcase %></span>
+                <% end %>
+                <%= hidden_field_tag "#{k}[photo_url]", pl.photo_url, id: "photo_url_#{pl.id}" %>
+                <%= text_field_tag "#{k}[name]", pl.name, class: "inp player-name-field", id: "name_#{pl.id}" %>
+              </div>
+            </td>
             <td><%= number_field_tag "#{k}[overall]", pl.overall, min: 1, max: 99, class: "inp num", id: "ovr_#{pl.id}" %></td>
+            <td><%= number_field_tag "#{k}[age]", pl.age || 25, min: 15, max: 45, class: "inp num", id: "age_#{pl.id}" %></td>
+            <td><%= number_field_tag "#{k}[stamina]", pl.stamina || 80, min: 1, max: 99, class: "inp num", id: "stamina_#{pl.id}" %></td>
             <td><%= select_tag "#{k}[position]", options_for_select(position_options, pl.position), class: "inp", id: "pos_#{pl.id}" %></td>
             <td><%= select_tag "#{k}[alt1]", options_for_select([["—", ""]] + position_options, pl.secondary_positions[0]), class: "inp", id: "alt1_#{pl.id}" %></td>
             <td><%= select_tag "#{k}[alt2]", options_for_select([["—", ""]] + position_options, pl.secondary_positions[1]), class: "inp", id: "alt2_#{pl.id}" %></td>
@@ -104,12 +124,14 @@
       <%= hidden_field_tag "player[team_id]", @team.id, id: "new_team" %>
       <table class="ed">
         <tr>
-          <th>Nome</th><th>Força</th><th>Posição</th><th>Sec. 1</th><th>Sec. 2</th>
+          <th>Nome</th><th>Força</th><th>Idade</th><th>Stamina</th><th>Posição</th><th>Sec. 1</th><th>Sec. 2</th>
           <% Player::ATTRS.each do |a| %><th title="<%= Player::ATTR_LABELS[a] %>"><%= Player::ATTR_SHORT[a] %></th><% end %><th></th>
         </tr>
         <tr>
           <td><%= text_field_tag "player[name]", nil, placeholder: "Nome", class: "inp", id: "new_name", required: true %></td>
           <td><%= number_field_tag "player[overall]", 70, min: 1, max: 99, class: "inp num", id: "new_ovr" %></td>
+          <td><%= number_field_tag "player[age]", 25, min: 15, max: 45, class: "inp num", id: "new_age" %></td>
+          <td><%= number_field_tag "player[stamina]", 80, min: 1, max: 99, class: "inp num", id: "new_stamina" %></td>
           <td><%= select_tag "player[position]", options_for_select(position_options, "CM"), class: "inp", id: "new_pos" %></td>
           <td><%= select_tag "player[alt1]", options_for_select([["—", ""]] + position_options), class: "inp", id: "new_alt1" %></td>
           <td><%= select_tag "player[alt2]", options_for_select([["—", ""]] + position_options), class: "inp", id: "new_alt2" %></td>
